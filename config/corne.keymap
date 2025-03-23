@@ -26,24 +26,40 @@
             bindings = <&kp TAB>;
             key-positions = <2 3>;
             timeout-ms = <25>;
+            layers = <0>;
         };
 
         backspace {
             bindings = <&kp BSPC>;
             key-positions = <8 9>;
             timeout-ms = <25>;
+            layers = <0 4>;
         };
 
         escape {
             bindings = <&kp ESC>;
             key-positions = <26 27>;
             timeout-ms = <25>;
+            layers = <0>;
         };
 
         enter {
             bindings = <&kp ENTER>;
             key-positions = <32 33>;
             timeout-ms = <25>;
+            layers = <0 4>;
+        };
+
+        function {
+            bindings = <&sl 3>;
+            key-positions = <36 41>;
+            layers = <0>;
+        };
+
+        game {
+            bindings = <&tog 4>;
+            key-positions = <31 32 33 34>;
+            layers = <0 4>;
         };
     };
 
@@ -79,7 +95,7 @@
 &none  &none  &kp GRAVE      &kp LBRC  &kp RBRC  &none     &none     &none      &none      &kp DELETE  &kp BSLH  &none
 &none  &none  &kp AT         &kp LPAR  &kp RPAR  &none     &kp LEFT  &kp DOWN   &kp UP     &kp RIGHT   &kp SQT   &none
 &none  &none  &kp AMPERSAND  &kp LBKT  &kp RBKT  &none     &kp HOME  &kp PG_DN  &kp PG_UP  &kp END     &none     &none
-                             &sl 3     &trans    &trans    &trans    &trans     &trans
+                             &none     &trans    &trans    &trans    &trans     &trans
             >;
         };
 
@@ -89,6 +105,24 @@
 &none  &bt BT_SEL 0  &bt BT_SEL 1    &bt BT_SEL 2  &bt BT_SEL 3     &bt BT_SEL 4    &kp F11  &kp F4  &kp F5  &kp F6  &none        &none
 &none  &none         &bt BT_CLR_ALL  &bt BT_CLR    &none            &none           &kp F12  &kp F1  &kp F2  &kp F3  &none        &none
                                      &trans        &trans           &trans          &trans   &trans  &trans
+            >;
+        };
+
+        game_base {
+            bindings = <
+&none  &kp Q  &kp W  &kp E  &kp R     &kp T        &kp Y      &kp U  &kp I      &kp O    &kp P     &none
+&none  &kp A  &kp S  &kp D  &kp F     &kp G        &kp H      &kp J  &kp K      &kp L    &kp SEMI  &none
+&none  &kp Z  &kp X  &kp C  &kp V     &kp B        &kp N      &kp M  &kp COMMA  &kp DOT  &kp FSLH  &none
+                     &mo 5  &kp LALT  &kp SPACE    &kp RSHFT  &none  &none
+            >;
+        };
+
+        game_number {
+            bindings = <
+&none  &kp F1   &kp F2   &kp F3   &kp F4       &kp F5         &kp F6  &kp F7  &kp F8  &kp F9  &kp F10  &none
+&none  &kp N1   &kp N2   &kp N3   &kp N4       &kp N5         &kp N6  &kp N7  &kp N8  &kp N9  &kp N0   &none
+&none  &kp F11  &kp F12  &kp ESC  &kp LS(TAB)  &kp RS(F12)    &none   &none   &none   &none   &none    &none
+                         &trans   &none        &none          &none   &none   &none
             >;
         };
     };
