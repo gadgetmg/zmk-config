@@ -82,7 +82,7 @@
             bindings = <
 &trans  &trans    &trans    &trans     &trans     &trans    &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &sk LGUI  &sk LALT  &sk LCTRL  &sk LSHFT  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &to 6     &trans    &trans     &trans     &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &tog 6    &trans    &trans     &trans     &trans    &trans  &trans  &trans  &trans  &trans  &trans
                             &trans     &trans     &trans    &trans  &trans  &trans
             >;
         };
@@ -125,10 +125,10 @@
 
         wasd_base {
             bindings = <
-&trans  &kp TAB    &kp Q  &kp W   &kp E     &kp R        &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &kp LSHFT  &kp A  &kp S   &kp D     &kp F        &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &kp LCTRL  &kp Z  &kp X   &kp C     &kp V        &trans  &trans  &trans  &trans  &trans  &trans
-                          &trans  &kp LALT  &kp SPACE    &trans  &trans  &trans
+&trans  &kp TAB    &kp Q  &kp W  &kp E     &kp R        &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &kp LSHFT  &kp A  &kp S  &kp D     &kp F        &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &kp LCTRL  &kp Z  &kp X  &kp C     &kp V        &trans  &trans  &trans  &trans  &trans  &trans
+                          &mo 7  &kp LALT  &kp SPACE    &trans  &trans  &trans
             >;
         };
 
@@ -137,7 +137,7 @@
 &trans  &kp ESC    &kp N7  &kp N8  &kp N9  &kp T    &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &kp GRAVE  &kp N4  &kp N5  &kp N6  &kp G    &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &kp N0     &kp N1  &kp N2  &kp N3  &kp B    &trans  &trans  &trans  &trans  &trans  &trans
-                           &mo 7   &none   &none    &trans  &trans  &trans
+                           &trans  &none   &none    &trans  &trans  &trans
             >;
         };
     };
