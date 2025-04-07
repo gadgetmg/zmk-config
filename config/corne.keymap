@@ -18,7 +18,7 @@
             bindings = <&kp TAB>;
             key-positions = <2 3>;
             timeout-ms = <25>;
-            layers = <0 4 5 1 2 6>;
+            layers = <0 3 5 1 2 6>;
         };
 
         backspace {
@@ -31,7 +31,7 @@
             bindings = <&kp ESC>;
             key-positions = <26 27>;
             timeout-ms = <25>;
-            layers = <0 4 5 1 2 6>;
+            layers = <0 3 5 1 2 6>;
         };
 
         enter {
@@ -43,7 +43,43 @@
         function {
             bindings = <&sl 6>;
             key-positions = <37 40>;
-            layers = <0 4 5 1 2 6>;
+            layers = <0 3 5 1 2 6>;
+        };
+
+        gui {
+            bindings = <&kp LGUI>;
+            key-positions = <3 4>;
+            timeout-ms = <25>;
+        };
+
+        alt {
+            bindings = <&kp LALT>;
+            key-positions = <7 8>;
+            timeout-ms = <25>;
+        };
+
+        lctrl {
+            bindings = <&kp LCTRL>;
+            key-positions = <28 27>;
+            timeout-ms = <25>;
+        };
+
+        rctrl {
+            bindings = <&kp RCTRL>;
+            key-positions = <31 32>;
+            timeout-ms = <25>;
+        };
+
+        rshift_1 {
+            bindings = <&kp RSHFT>;
+            key-positions = <28 26>;
+            timeout-ms = <25>;
+        };
+
+        rshift_2 {
+            bindings = <&kp RSHFT>;
+            key-positions = <31 33>;
+            timeout-ms = <25>;
         };
     };
 
@@ -73,10 +109,10 @@
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
             bindings = <
-&none  &kp Q  &kp W  &kp E        &kp R  &kp T        &kp Y      &kp U  &kp I       &kp O    &kp P     &none
-&none  &kp A  &kp S  &kp D        &kp F  &kp G        &kp H      &kp J  &kp K       &kp L    &kp SEMI  &none
-&none  &kp Z  &kp X  &kp C        &kp V  &kp B        &kp N      &kp M  &kp COMMA   &kp DOT  &kp FSLH  &none
-                     &lm 3 LCTRL  &mo 1  &kp LSHFT    &kp SPACE  &mo 2  &lm 4 LGUI
+&none  &kp Q  &kp W  &kp E     &kp R  &kp T        &kp Y      &kp U  &kp I      &kp O    &kp P     &none
+&none  &kp A  &kp S  &kp D     &kp F  &kp G        &kp H      &kp J  &kp K      &kp L    &kp SEMI  &none
+&none  &kp Z  &kp X  &kp C     &kp V  &kp B        &kp N      &kp M  &kp COMMA  &kp DOT  &kp FSLH  &none
+                     &kp LALT  &mo 1  &kp LSHFT    &kp SPACE  &mo 2  &kp LGUI
             >;
         };
 
@@ -94,16 +130,7 @@
 &none  &none  &kp GRAVE      &kp LBRC  &kp RBRC  &none     &none   &none   &none   &none  &kp BSLH  &none
 &none  &none  &kp AT         &kp LPAR  &kp RPAR  &none     &none   &none   &none   &none  &kp SQT   &none
 &none  &none  &kp AMPERSAND  &kp LBKT  &kp RBKT  &none     &none   &none   &none   &none  &none     &none
-                             &none     &trans    &trans    &trans  &trans  &trans
-            >;
-        };
-
-        nav {
-            bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans    &trans    &trans     &trans     &kp DEL    &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &kp LEFT  &kp DOWN   &kp UP     &kp RIGHT  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &kp HOME  &kp PG_DN  &kp PG_UP  &kp END    &trans  &trans
-                        &trans  &trans  &trans    &trans    &trans     &trans
+                             &trans    &trans    &trans    &trans  &trans  &trans
             >;
         };
 
@@ -113,6 +140,15 @@
 &trans  &trans  &trans  &trans  &trans  &trans    &kp N0  &kp N4  &kp N5  &kp N6  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans    &trans  &kp N1  &kp N2  &kp N3  &trans  &trans
                         &trans  &trans  &trans    &trans  &trans  &trans
+            >;
+        };
+
+        nav {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans    &trans    &trans     &trans     &kp DEL    &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &kp LEFT  &kp DOWN   &kp UP     &kp RIGHT  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &kp HOME  &kp PG_DN  &kp PG_UP  &kp END    &trans  &trans
+                        &trans  &trans  &trans    &trans    &trans     &trans
             >;
         };
 
@@ -149,12 +185,12 @@
 
         num {
             if-layers = <1>;
-            then-layer = <4>;
+            then-layer = <3>;
         };
 
         nav {
             if-layers = <2>;
-            then-layer = <3>;
+            then-layer = <4>;
         };
     };
 };
