@@ -41,7 +41,7 @@
         };
 
         function {
-            bindings = <&sl 6>;
+            bindings = <&sl 5>;
             key-positions = <37 40>;
             layers = <0 3 5 1 2 6>;
         };
