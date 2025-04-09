@@ -51,14 +51,9 @@
             key-positions = <15 14>;
         };
 
-        quotes {
-            bindings = <&kp DQT>;
-            key-positions = <19 21>;
-        };
-
-        apostrophe {
+        quote {
             bindings = <&kp SQT>;
-            key-positions = <14 16>;
+            key-positions = <21 20>;
         };
     };
 
