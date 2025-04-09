@@ -18,7 +18,7 @@
             bindings = <&kp TAB>;
             key-positions = <2 3>;
             timeout-ms = <30>;
-            layers = <0 1 2 3 4 5>;
+            layers = <0 4 5>;
         };
 
         backspace {
@@ -31,7 +31,7 @@
             bindings = <&kp ESC>;
             key-positions = <26 27>;
             timeout-ms = <30>;
-            layers = <0 1 2 3 4 5>;
+            layers = <0 4 5>;
         };
 
         enter {
@@ -42,8 +42,8 @@
 
         function {
             bindings = <&sl 5>;
-            key-positions = <37 40>;
-            layers = <0 1 2 3 4 5>;
+            key-positions = <36 41>;
+            layers = <0 4 5>;
         };
 
         dash {
@@ -59,6 +59,21 @@
         };
     };
 
+    behaviors {
+        on: on {
+            compatible = "zmk,behavior-toggle-layer";
+            label = "ON";
+            #binding-cells = <1>;
+        };
+
+        off: off {
+            compatible = "zmk,behavior-toggle-layer";
+            label = "OFF";
+            #binding-cells = <1>;
+            toggle-mode = "off";
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -70,73 +85,10 @@
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
             bindings = <
-&none  &kp Q  &kp W  &kp E      &kp R  &kp T        &kp Y      &kp U   &kp I      &kp O    &kp P     &none
-&none  &kp A  &kp S  &kp D      &kp F  &kp G        &kp H      &kp J   &kp K      &kp L    &kp SEMI  &none
-&none  &kp Z  &kp X  &kp C      &kp V  &kp B        &kp N      &kp M   &kp COMMA  &kp DOT  &kp FSLH  &none
-                     &kp LCTRL  &mo 9  &kp LSHFT    &kp SPACE  &mo 10  &mo 2
-            >;
-        };
-
-        left_modifier {
-            bindings = <
-&trans  &trans    &trans    &trans     &trans     &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &sk LGUI  &sk LALT  &sk LCTRL  &sk LSHFT  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &tog 6    &trans    &trans     &trans     &trans    &trans  &trans  &trans  &trans  &trans  &trans
-                            &trans     &trans     &trans    &trans  &trans  &trans
-            >;
-        };
-
-        right_modifier {
-            bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans     &trans     &trans    &trans    &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &sk RSHFT  &sk RCTRL  &sk LALT  &sk RGUI  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans     &trans     &trans    &to 0     &trans
-                        &trans  &trans  &trans    &trans  &trans     &trans
-            >;
-        };
-
-        number {
-            bindings = <
-&none  &none  &kp TILDE  &kp CARET   &kp UNDER    &none           &none   &kp N7  &kp N8  &kp N9  &kp PIPE         &none
-&none  &none  &kp PLUS   &kp MINUS   &kp EQUAL    &kp ASTERISK    &none   &kp N4  &kp N5  &kp N6  &kp DQT          &none
-&none  &none  &kp HASH   &kp DOLLAR  &kp PERCENT  &none           &none   &kp N1  &kp N2  &kp N3  &kp EXCLAMATION  &none
-                         &trans      &trans       &trans          &trans  &kp N0  &trans
-            >;
-        };
-
-        symbol {
-            bindings = <
-&none  &none  &kp GRAVE      &kp LBRC  &kp RBRC  &none     &none     &none      &none      &kp DELETE  &kp BSLH  &none
-&none  &none  &kp AT         &kp LPAR  &kp RPAR  &none     &kp LEFT  &kp DOWN   &kp UP     &kp RIGHT   &kp SQT   &none
-&none  &none  &kp AMPERSAND  &kp LBKT  &kp RBKT  &none     &kp HOME  &kp PG_DN  &kp PG_UP  &kp END     &none     &none
-                             &none     &trans    &trans    &trans    &trans     &trans
-            >;
-        };
-
-        function {
-            bindings = <
-&none  &bootloader   &none           &none         &kp PRINTSCREEN  &none           &kp F10  &kp F7  &kp F8  &kp F9  &bootloader  &none
-&none  &bt BT_SEL 0  &bt BT_SEL 1    &bt BT_SEL 2  &bt BT_SEL 3     &bt BT_SEL 4    &kp F11  &kp F4  &kp F5  &kp F6  &none        &none
-&none  &none         &bt BT_CLR_ALL  &bt BT_CLR    &none            &none           &kp F12  &kp F1  &kp F2  &kp F3  &none        &none
-                                     &trans        &trans           &trans          &trans   &trans  &trans
-            >;
-        };
-
-        wasd_base {
-            bindings = <
-&trans  &kp TAB    &kp Q  &kp W  &kp E     &kp R        &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &kp LSHFT  &kp A  &kp S  &kp D     &kp F        &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &kp LCTRL  &kp Z  &kp X  &kp C     &kp V        &trans  &trans  &trans  &trans  &trans  &trans
-                          &mo 7  &kp LALT  &kp SPACE    &trans  &trans  &trans
-            >;
-        };
-
-        wasd_alt {
-            bindings = <
-&trans  &kp ESC    &kp N7  &kp N8  &kp N9  &kp T    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &kp GRAVE  &kp N4  &kp N5  &kp N6  &kp G    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &kp N0     &kp N1  &kp N2  &kp N3  &kp B    &trans  &trans  &trans  &trans  &trans  &trans
-                           &trans  &none   &none    &trans  &trans  &trans
+&none  &kp Q  &kp W  &kp E      &kp R  &kp T        &kp Y      &kp U  &kp I      &kp O    &kp P     &none
+&none  &kp A  &kp S  &kp D      &kp F  &kp G        &kp H      &kp J  &kp K      &kp L    &kp SEMI  &none
+&none  &kp Z  &kp X  &kp C      &kp V  &kp B        &kp N      &kp M  &kp COMMA  &kp DOT  &kp FSLH  &none
+                     &kp LCTRL  &mo 2  &kp LSHFT    &kp SPACE  &mo 3  &mo 4
             >;
         };
 
@@ -145,7 +97,7 @@
 &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &kp N6  &kp N4  &kp N0  &kp N2  &trans    &trans  &kp N3  &kp N1  &kp N5  &kp N7  &trans
 &trans  &trans  &trans  &trans  &kp N8  &trans    &trans  &kp N9  &trans  &trans  &trans  &trans
-                        &trans  &trans  &trans    &trans  &trans  &trans
+                        &trans  &tog 1  &trans    &trans  &tog 1  &trans
             >;
         };
 
@@ -166,19 +118,55 @@
                         &trans  &trans  &trans    &trans     &trans    &trans
             >;
         };
+
+        callum {
+            bindings = <
+&trans  &trans    &trans    &trans     &trans     &trans    &trans  &trans     &trans     &trans    &trans    &trans
+&trans  &sk LGUI  &sk LALT  &sk LCTRL  &sk LSHFT  &trans    &trans  &sk RSHFT  &sk RCTRL  &sk LALT  &sk RGUI  &trans
+&trans  &trans    &trans    &trans     &trans     &trans    &trans  &trans     &trans     &trans    &trans    &trans
+                            &trans     &trans     &trans    &trans  &trans     &trans
+            >;
+        };
+
+        function {
+            bindings = <
+&none  &none        &bt BT_SEL 4  &bt BT_SEL 0  &bt BT_SEL 2  &none         &none       &bt BT_SEL 3  &bt BT_SEL 1  &bt BT_CLR  &none        &none
+&none  &kp F6       &kp F4        &kp F10       &kp F2        &kp F12       &kp F11     &kp F3        &kp F1        &kp F5      &kp F7       &none
+&none  &bootloader  &none         &none         &kp F8        &sys_reset    &sys_reset  &kp F9        &none         &none       &bootloader  &none
+                                  &trans        &trans        &trans        &trans      &trans        &trans
+            >;
+        };
+
+        wasd_base {
+            bindings = <
+&trans  &kp TAB    &kp Q  &kp W  &kp E     &kp R        &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &kp LSHFT  &kp A  &kp S  &kp D     &kp F        &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &kp LCTRL  &kp Z  &kp X  &kp C     &kp V        &trans  &trans  &trans  &trans  &trans  &trans
+                          &mo 7  &kp LALT  &kp SPACE    &trans  &trans  &trans
+            >;
+        };
+
+        wasd_alt {
+            bindings = <
+&trans  &kp ESC    &kp N7  &kp N8  &kp N9  &kp T    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &kp GRAVE  &kp N4  &kp N5  &kp N6  &kp G    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &kp N0     &kp N1  &kp N2  &kp N3  &kp B    &trans  &trans  &trans  &trans  &trans  &trans
+                           &trans  &none   &none    &trans  &trans  &trans
+            >;
+        };
     };
 
     conditional_layers {
         compatible = "zmk,conditional-layers";
 
         rnum {
-            if-layers = <9>;
-            then-layer = <8>;
+            if-layers = <2>;
+            then-layer = <1>;
         };
 
         lnum {
-            if-layers = <10>;
-            then-layer = <8>;
+            if-layers = <3>;
+            then-layer = <1>;
         };
     };
 };
