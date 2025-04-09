@@ -70,10 +70,10 @@
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
             bindings = <
-&none  &kp Q  &kp W  &kp E      &kp R  &kp T        &kp Y      &kp U  &kp I      &kp O    &kp P     &none
-&none  &kp A  &kp S  &kp D      &kp F  &kp G        &kp H      &kp J  &kp K      &kp L    &kp SEMI  &none
-&none  &kp Z  &kp X  &kp C      &kp V  &kp B        &kp N      &kp M  &kp COMMA  &kp DOT  &kp FSLH  &none
-                     &kp LCTRL  &mo 3  &kp LSHFT    &kp SPACE  &mo 4  &mo 2
+&none  &kp Q  &kp W  &kp E      &kp R  &kp T        &kp Y      &kp U   &kp I      &kp O    &kp P     &none
+&none  &kp A  &kp S  &kp D      &kp F  &kp G        &kp H      &kp J   &kp K      &kp L    &kp SEMI  &none
+&none  &kp Z  &kp X  &kp C      &kp V  &kp B        &kp N      &kp M   &kp COMMA  &kp DOT  &kp FSLH  &none
+                     &kp LCTRL  &mo 9  &kp LSHFT    &kp SPACE  &mo 10  &mo 2
             >;
         };
 
@@ -165,6 +165,20 @@
 &trans  &trans  &trans  &trans  &trans  &trans    &trans     &kp AMPS  &kp LBKT  &kp RBKT  &trans    &trans
                         &trans  &trans  &trans    &trans     &trans    &trans
             >;
+        };
+    };
+
+    conditional_layers {
+        compatible = "zmk,conditional-layers";
+
+        rnum {
+            if-layers = <9>;
+            then-layer = <8>;
+        };
+
+        lnum {
+            if-layers = <10>;
+            then-layer = <8>;
         };
     };
 };
