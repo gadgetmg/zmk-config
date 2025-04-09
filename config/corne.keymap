@@ -17,27 +17,27 @@
         tab {
             bindings = <&kp TAB>;
             key-positions = <2 3>;
-            timeout-ms = <25>;
+            timeout-ms = <30>;
             layers = <0 1 2 3 4 5>;
         };
 
         backspace {
             bindings = <&kp BSPC>;
             key-positions = <8 9>;
-            timeout-ms = <25>;
+            timeout-ms = <30>;
         };
 
         escape {
             bindings = <&kp ESC>;
             key-positions = <26 27>;
-            timeout-ms = <25>;
+            timeout-ms = <30>;
             layers = <0 1 2 3 4 5>;
         };
 
         enter {
             bindings = <&kp ENTER>;
             key-positions = <32 33>;
-            timeout-ms = <25>;
+            timeout-ms = <30>;
         };
 
         function {
@@ -49,11 +49,13 @@
         dash {
             bindings = <&kp MINUS>;
             key-positions = <15 14>;
+            timeout-ms = <10>;
         };
 
         quote {
             bindings = <&kp SQT>;
             key-positions = <21 20>;
+            timeout-ms = <10>;
         };
     };
 
