@@ -70,10 +70,10 @@
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
             bindings = <
-&none  &kp Q  &kp W  &kp E  &kp R  &kp T        &kp Y      &kp U  &kp I      &kp O    &kp P     &none
-&none  &kp A  &kp S  &kp D  &kp F  &kp G        &kp H      &kp J  &kp K      &kp L    &kp SEMI  &none
-&none  &kp Z  &kp X  &kp C  &kp V  &kp B        &kp N      &kp M  &kp COMMA  &kp DOT  &kp FSLH  &none
-                     &mo 1  &mo 3  &kp LSHFT    &kp SPACE  &mo 4  &mo 2
+&none  &kp Q  &kp W  &kp E      &kp R  &kp T        &kp Y      &kp U  &kp I      &kp O    &kp P     &none
+&none  &kp A  &kp S  &kp D      &kp F  &kp G        &kp H      &kp J  &kp K      &kp L    &kp SEMI  &none
+&none  &kp Z  &kp X  &kp C      &kp V  &kp B        &kp N      &kp M  &kp COMMA  &kp DOT  &kp FSLH  &none
+                     &kp LCTRL  &mo 3  &kp LSHFT    &kp SPACE  &mo 4  &mo 2
             >;
         };
 
@@ -137,6 +137,15 @@
 &trans  &kp GRAVE  &kp N4  &kp N5  &kp N6  &kp G    &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &kp N0     &kp N1  &kp N2  &kp N3  &kp B    &trans  &trans  &trans  &trans  &trans  &trans
                            &trans  &none   &none    &trans  &trans  &trans
+            >;
+        };
+
+        layer_8 {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &kp N6  &kp N4  &kp N0  &kp N2  &trans    &trans  &kp N3  &kp N1  &kp N5  &kp N7  &trans
+&trans  &trans  &trans  &trans  &kp N8  &trans    &trans  &kp N9  &trans  &trans  &trans  &trans
+                        &trans  &trans  &trans    &trans  &trans  &trans
             >;
         };
     };
