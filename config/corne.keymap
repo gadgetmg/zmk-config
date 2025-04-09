@@ -46,12 +46,19 @@
             layers = <0 1 2 3 4 5>;
         };
 
-        caps_word {
-            bindings = <&caps_word>;
-            key-positions = <38 39>;
-            require-prior-idle-ms = <0>;
-            timeout-ms = <10>;
-            layers = <0 1 2 3 4 5>;
+        dash {
+            bindings = <&kp MINUS>;
+            key-positions = <15 14>;
+        };
+
+        quotes {
+            bindings = <&kp DQT>;
+            key-positions = <19 21>;
+        };
+
+        apostrophe {
+            bindings = <&kp SQT>;
+            key-positions = <14 16>;
         };
     };
 
