@@ -17,41 +17,60 @@
         tab {
             bindings = <&kp TAB>;
             key-positions = <2 3>;
-            timeout-ms = <25>;
-            layers = <0 1 2 3 4 5>;
+            timeout-ms = <30>;
+            layers = <0 4 5>;
         };
 
         backspace {
             bindings = <&kp BSPC>;
             key-positions = <8 9>;
-            timeout-ms = <25>;
+            timeout-ms = <30>;
         };
 
         escape {
             bindings = <&kp ESC>;
             key-positions = <26 27>;
-            timeout-ms = <25>;
-            layers = <0 1 2 3 4 5>;
+            timeout-ms = <30>;
+            layers = <0 4 5>;
         };
 
         enter {
             bindings = <&kp ENTER>;
             key-positions = <32 33>;
-            timeout-ms = <25>;
+            timeout-ms = <30>;
         };
 
         function {
             bindings = <&sl 5>;
-            key-positions = <37 40>;
-            layers = <0 1 2 3 4 5>;
+            key-positions = <36 41>;
+            layers = <0 4 5>;
         };
 
-        caps_word {
-            bindings = <&caps_word>;
-            key-positions = <38 39>;
-            require-prior-idle-ms = <0>;
+        dash {
+            bindings = <&kp MINUS>;
+            key-positions = <15 14>;
             timeout-ms = <10>;
-            layers = <0 1 2 3 4 5>;
+        };
+
+        quote {
+            bindings = <&kp SQT>;
+            key-positions = <21 20>;
+            timeout-ms = <10>;
+        };
+    };
+
+    behaviors {
+        on: on {
+            compatible = "zmk,behavior-toggle-layer";
+            label = "ON";
+            #binding-cells = <1>;
+        };
+
+        off: off {
+            compatible = "zmk,behavior-toggle-layer";
+            label = "OFF";
+            #binding-cells = <1>;
+            toggle-mode = "off";
         };
     };
 
@@ -66,55 +85,55 @@
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
             bindings = <
-&none  &kp Q  &kp W  &kp E  &kp R  &kp T        &kp Y      &kp U  &kp I      &kp O    &kp P     &none
-&none  &kp A  &kp S  &kp D  &kp F  &kp G        &kp H      &kp J  &kp K      &kp L    &kp SEMI  &none
-&none  &kp Z  &kp X  &kp C  &kp V  &kp B        &kp N      &kp M  &kp COMMA  &kp DOT  &kp FSLH  &none
-                     &mo 1  &mo 3  &kp LSHFT    &kp SPACE  &mo 4  &mo 2
+&none  &kp Q  &kp W  &kp E      &kp R  &kp T        &kp Y      &kp U  &kp I      &kp O    &kp P     &none
+&none  &kp A  &kp S  &kp D      &kp F  &kp G        &kp H      &kp J  &kp K      &kp L    &kp SEMI  &none
+&none  &kp Z  &kp X  &kp C      &kp V  &kp B        &kp N      &kp M  &kp COMMA  &kp DOT  &kp FSLH  &none
+                     &kp LCTRL  &mo 2  &kp LSHFT    &kp SPACE  &mo 3  &mo 4
             >;
         };
 
-        left_modifier {
+        num {
             bindings = <
-&trans  &trans    &trans    &trans     &trans     &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &sk LGUI  &sk LALT  &sk LCTRL  &sk LSHFT  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &tog 6    &trans    &trans     &trans     &trans    &trans  &trans  &trans  &trans  &trans  &trans
-                            &trans     &trans     &trans    &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &kp N6  &kp N4  &kp N0  &kp N2  &trans    &trans  &kp N3  &kp N1  &kp N5  &kp N7  &trans
+&trans  &trans  &trans  &trans  &kp N8  &trans    &trans  &kp N9  &trans  &trans  &trans  &trans
+                        &trans  &trans  &trans    &trans  &trans  &trans
             >;
         };
 
-        right_modifier {
+        lsym {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans     &trans     &trans    &trans    &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &sk RSHFT  &sk RCTRL  &sk LALT  &sk RGUI  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans     &trans     &trans    &to 0     &trans
-                        &trans  &trans  &trans    &trans  &trans     &trans
+&trans  &trans    &kp TILDE  &kp CARET   &kp UNDER    &trans          &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &kp PIPE  &kp PLUS   &kp MINUS   &kp EQUAL    &kp ASTERISK    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans    &kp HASH   &kp DOLLAR  &kp PERCENT  &trans          &trans  &trans  &trans  &trans  &trans  &trans
+                             &trans      &trans       &trans          &trans  &trans  &trans
             >;
         };
 
-        number {
+        rsym {
             bindings = <
-&none  &none  &kp TILDE  &kp CARET   &kp UNDER    &none           &none   &kp N7  &kp N8  &kp N9  &kp PIPE         &none
-&none  &none  &kp PLUS   &kp MINUS   &kp EQUAL    &kp ASTERISK    &none   &kp N4  &kp N5  &kp N6  &kp DQT          &none
-&none  &none  &kp HASH   &kp DOLLAR  &kp PERCENT  &none           &none   &kp N1  &kp N2  &kp N3  &kp EXCLAMATION  &none
-                         &trans      &trans       &trans          &trans  &kp N0  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans     &kp BSLH  &kp LBRC  &kp RBRC  &trans    &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &kp GRAVE  &kp AT    &kp LPAR  &kp RPAR  &kp EXCL  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans     &kp AMPS  &kp LBKT  &kp RBKT  &trans    &trans
+                        &trans  &trans  &trans    &trans     &trans    &trans
             >;
         };
 
-        symbol {
+        callum {
             bindings = <
-&none  &none  &kp GRAVE      &kp LBRC  &kp RBRC  &none     &none     &none      &none      &kp DELETE  &kp BSLH  &none
-&none  &none  &kp AT         &kp LPAR  &kp RPAR  &none     &kp LEFT  &kp DOWN   &kp UP     &kp RIGHT   &kp SQT   &none
-&none  &none  &kp AMPERSAND  &kp LBKT  &kp RBKT  &none     &kp HOME  &kp PG_DN  &kp PG_UP  &kp END     &none     &none
-                             &none     &trans    &trans    &trans    &trans     &trans
+&trans  &trans    &trans    &trans     &trans     &trans    &trans  &trans     &trans     &trans    &trans    &trans
+&trans  &sk LGUI  &sk LALT  &sk LCTRL  &sk LSHFT  &trans    &trans  &sk RSHFT  &sk RCTRL  &sk LALT  &sk RGUI  &trans
+&trans  &trans    &trans    &trans     &trans     &trans    &trans  &trans     &trans     &trans    &trans    &trans
+                            &trans     &trans     &trans    &trans  &trans     &trans
             >;
         };
 
         function {
             bindings = <
-&none  &bootloader   &none           &none         &kp PRINTSCREEN  &none           &kp F10  &kp F7  &kp F8  &kp F9  &bootloader  &none
-&none  &bt BT_SEL 0  &bt BT_SEL 1    &bt BT_SEL 2  &bt BT_SEL 3     &bt BT_SEL 4    &kp F11  &kp F4  &kp F5  &kp F6  &none        &none
-&none  &none         &bt BT_CLR_ALL  &bt BT_CLR    &none            &none           &kp F12  &kp F1  &kp F2  &kp F3  &none        &none
-                                     &trans        &trans           &trans          &trans   &trans  &trans
+&none  &none        &bt BT_SEL 4  &bt BT_SEL 0  &bt BT_SEL 2  &none         &none       &bt BT_SEL 3  &bt BT_SEL 1  &bt BT_CLR  &none        &none
+&none  &kp F6       &kp F4        &kp F10       &kp F2        &kp F12       &kp F11     &kp F3        &kp F1        &kp F5      &kp F7       &none
+&none  &bootloader  &none         &none         &kp F8        &sys_reset    &sys_reset  &kp F9        &none         &none       &bootloader  &none
+                                  &trans        &trans        &trans        &trans      &trans        &trans
             >;
         };
 
@@ -134,6 +153,20 @@
 &trans  &kp N0     &kp N1  &kp N2  &kp N3  &kp B    &trans  &trans  &trans  &trans  &trans  &trans
                            &trans  &none   &none    &trans  &trans  &trans
             >;
+        };
+    };
+
+    conditional_layers {
+        compatible = "zmk,conditional-layers";
+
+        rnum {
+            if-layers = <2>;
+            then-layer = <1>;
+        };
+
+        lnum {
+            if-layers = <3>;
+            then-layer = <1>;
         };
     };
 };
