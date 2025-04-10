@@ -58,11 +58,6 @@
             key-positions = <21 20>;
             timeout-ms = <10>;
         };
-
-        num_word {
-            bindings = <&num_word 1>;
-            key-positions = <37 40>;
-        };
     };
 
     behaviors {
