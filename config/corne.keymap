@@ -104,19 +104,19 @@
 
         lsym {
             bindings = <
-&trans  &trans    &kp TILDE  &kp CARET   &kp UNDER    &trans          &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &kp PIPE  &kp PLUS   &kp MINUS   &kp EQUAL    &kp ASTERISK    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans    &kp HASH   &kp DOLLAR  &kp PERCENT  &trans          &trans  &trans  &trans  &trans  &trans  &trans
-                             &trans      &trans       &trans          &trans  &on 1   &trans
+&trans  &trans    &kp TILDE  &kp CARET   &kp UNDER    &trans          &trans  &trans       &trans  &trans  &trans  &trans
+&trans  &kp PIPE  &kp PLUS   &kp MINUS   &kp EQUAL    &kp ASTERISK    &trans  &trans       &trans  &trans  &trans  &trans
+&trans  &trans    &kp HASH   &kp DOLLAR  &kp PERCENT  &trans          &trans  &trans       &trans  &trans  &trans  &trans
+                             &trans      &trans       &trans          &trans  &num_word 1  &trans
             >;
         };
 
         rsym {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans    &trans     &kp BSLH  &kp LBRC  &kp RBRC  &trans    &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &kp GRAVE  &kp AT    &kp LPAR  &kp RPAR  &kp EXCL  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans     &kp AMPS  &kp LBKT  &kp RBKT  &trans    &trans
-                        &trans  &on 1   &trans    &trans     &trans    &trans
+&trans  &trans  &trans  &trans  &trans       &trans    &trans     &kp BSLH  &kp LBRC  &kp RBRC  &trans    &trans
+&trans  &trans  &trans  &trans  &trans       &trans    &kp GRAVE  &kp AT    &kp LPAR  &kp RPAR  &kp EXCL  &trans
+&trans  &trans  &trans  &trans  &trans       &trans    &trans     &kp AMPS  &kp LBKT  &kp RBKT  &trans    &trans
+                        &trans  &num_word 1  &trans    &trans     &trans    &trans
             >;
         };
 
