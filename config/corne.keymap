@@ -60,7 +60,7 @@
         };
 
         num_word {
-            bindings = <&none>;
+            bindings = <&num_word 1>;
             key-positions = <37 40>;
         };
     };
