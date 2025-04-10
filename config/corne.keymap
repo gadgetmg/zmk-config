@@ -97,7 +97,7 @@
 &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &kp N6  &kp N4  &kp N0  &kp N2  &trans    &trans  &kp N3  &kp N1  &kp N5  &kp N7  &trans
 &trans  &trans  &trans  &trans  &kp N8  &trans    &trans  &kp N9  &trans  &trans  &trans  &trans
-                        &trans  &tog 1  &trans    &trans  &tog 1  &trans
+                        &trans  &off 1  &trans    &trans  &off 1  &trans
             >;
         };
 
@@ -106,7 +106,7 @@
 &trans  &trans    &kp TILDE  &kp CARET   &kp UNDER    &trans          &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &kp PIPE  &kp PLUS   &kp MINUS   &kp EQUAL    &kp ASTERISK    &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans    &kp HASH   &kp DOLLAR  &kp PERCENT  &trans          &trans  &trans  &trans  &trans  &trans  &trans
-                             &trans      &trans       &trans          &trans  &trans  &trans
+                             &trans      &trans       &trans          &trans  &on 1   &trans
             >;
         };
 
@@ -115,7 +115,7 @@
 &trans  &trans  &trans  &trans  &trans  &trans    &trans     &kp BSLH  &kp LBRC  &kp RBRC  &trans    &trans
 &trans  &trans  &trans  &trans  &trans  &trans    &kp GRAVE  &kp AT    &kp LPAR  &kp RPAR  &kp EXCL  &trans
 &trans  &trans  &trans  &trans  &trans  &trans    &trans     &kp AMPS  &kp LBKT  &kp RBKT  &trans    &trans
-                        &trans  &trans  &trans    &trans     &trans    &trans
+                        &trans  &on 1   &trans    &trans     &trans    &trans
             >;
         };
 
