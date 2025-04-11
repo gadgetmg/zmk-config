@@ -18,7 +18,7 @@
             bindings = <&kp TAB>;
             key-positions = <2 3>;
             timeout-ms = <30>;
-            layers = <0 4 5>;
+            layers = <0 5 5>;
         };
 
         backspace {
@@ -31,7 +31,7 @@
             bindings = <&kp ESC>;
             key-positions = <26 27>;
             timeout-ms = <30>;
-            layers = <0 4 5>;
+            layers = <0 5 5>;
         };
 
         enter {
@@ -43,7 +43,7 @@
         function {
             bindings = <&sl 5>;
             key-positions = <36 41>;
-            layers = <0 4 5>;
+            layers = <0 5 5>;
         };
 
         dash {
@@ -88,7 +88,25 @@
 &none  &kp Q  &kp W  &kp E      &kp R  &kp T        &kp Y      &kp U  &kp I      &kp O    &kp P     &none
 &none  &kp A  &kp S  &kp D      &kp F  &kp G        &kp H      &kp J  &kp K      &kp L    &kp SEMI  &none
 &none  &kp Z  &kp X  &kp C      &kp V  &kp B        &kp N      &kp M  &kp COMMA  &kp DOT  &kp FSLH  &none
-                     &kp LCTRL  &mo 2  &kp LSHFT    &kp SPACE  &mo 3  &mo 4
+                     &kp LCTRL  &mo 1  &kp LSHFT    &kp SPACE  &mo 2  &mo 4
+            >;
+        };
+
+        lsym {
+            bindings = <
+&trans  &trans    &kp TILDE  &kp CARET   &kp UNDER    &trans          &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &kp PIPE  &kp PLUS   &kp MINUS   &kp EQUAL    &kp ASTERISK    &trans  &kp N3  &kp N1  &kp N5  &kp N7  &trans
+&trans  &trans    &kp HASH   &kp DOLLAR  &kp PERCENT  &trans          &trans  &kp N9  &trans  &trans  &trans  &trans
+                             &trans      &trans       &trans          &trans  &on 3   &trans
+            >;
+        };
+
+        rsym {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans    &trans     &kp BSLH  &kp LBRC  &kp RBRC  &trans    &trans
+&trans  &kp N6  &kp N4  &kp N0  &kp N2  &trans    &kp GRAVE  &kp AT    &kp LPAR  &kp RPAR  &kp EXCL  &trans
+&trans  &trans  &trans  &trans  &kp N8  &trans    &trans     &kp AMPS  &kp LBKT  &kp RBKT  &trans    &trans
+                        &trans  &on 3   &trans    &trans     &trans    &trans
             >;
         };
 
@@ -97,25 +115,7 @@
 &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &kp N6  &kp N4  &kp N0  &kp N2  &trans    &trans  &kp N3  &kp N1  &kp N5  &kp N7  &trans
 &trans  &trans  &trans  &trans  &kp N8  &trans    &trans  &kp N9  &trans  &trans  &trans  &trans
-                        &trans  &trans  &trans    &trans  &trans  &trans
-            >;
-        };
-
-        lsym {
-            bindings = <
-&trans  &trans    &kp TILDE  &kp CARET   &kp UNDER    &trans          &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &kp PIPE  &kp PLUS   &kp MINUS   &kp EQUAL    &kp ASTERISK    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans    &kp HASH   &kp DOLLAR  &kp PERCENT  &trans          &trans  &trans  &trans  &trans  &trans  &trans
-                             &trans      &trans       &trans          &trans  &trans  &trans
-            >;
-        };
-
-        rsym {
-            bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans    &trans     &kp BSLH  &kp LBRC  &kp RBRC  &trans    &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &kp GRAVE  &kp AT    &kp LPAR  &kp RPAR  &kp EXCL  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans     &kp AMPS  &kp LBKT  &kp RBKT  &trans    &trans
-                        &trans  &trans  &trans    &trans     &trans    &trans
+                        &trans  &off 3  &trans    &trans  &off 3  &trans
             >;
         };
 
@@ -156,17 +156,5 @@
         };
     };
 
-    conditional_layers {
-        compatible = "zmk,conditional-layers";
-
-        rnum {
-            if-layers = <2>;
-            then-layer = <1>;
-        };
-
-        lnum {
-            if-layers = <3>;
-            then-layer = <1>;
-        };
-    };
+    conditional_layers { compatible = "zmk,conditional-layers"; };
 };
