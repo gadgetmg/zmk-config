@@ -18,7 +18,7 @@
             bindings = <&kp TAB>;
             key-positions = <2 3>;
             timeout-ms = <30>;
-            layers = <0 5 5>;
+            layers = <0 6 6>;
         };
 
         backspace {
@@ -31,7 +31,7 @@
             bindings = <&kp ESC>;
             key-positions = <26 27>;
             timeout-ms = <30>;
-            layers = <0 5 5>;
+            layers = <0 6 6>;
         };
 
         enter {
@@ -41,9 +41,9 @@
         };
 
         function {
-            bindings = <&sl 5>;
+            bindings = <&sl 6>;
             key-positions = <36 41>;
-            layers = <0 5 5>;
+            layers = <0 6 6>;
         };
 
         dash {
@@ -85,10 +85,10 @@
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
             bindings = <
-&none  &kp Q  &kp W  &kp E      &kp R  &kp T        &kp Y      &kp U  &kp I      &kp O    &kp P     &none
-&none  &kp A  &kp S  &kp D      &kp F  &kp G        &kp H      &kp J  &kp K      &kp L    &kp SEMI  &none
-&none  &kp Z  &kp X  &kp C      &kp V  &kp B        &kp N      &kp M  &kp COMMA  &kp DOT  &kp FSLH  &none
-                     &kp LCTRL  &mo 1  &kp LSHFT    &kp SPACE  &mo 2  &mo 4
+&none  &kp Q  &kp W  &kp E      &kp R  &kp T        &kp Y        &kp U  &kp I      &kp O    &kp P     &none
+&none  &kp A  &kp S  &kp D      &kp F  &kp G        &kp H        &kp J  &kp K      &kp L    &kp SEMI  &none
+&none  &kp Z  &kp X  &kp C      &kp V  &kp B        &kp N        &kp M  &kp COMMA  &kp DOT  &kp FSLH  &none
+                     &kp LCTRL  &mo 1  &kp LSHFT    &lt 3 SPACE  &mo 2  &mo 4
             >;
         };
 
@@ -97,7 +97,7 @@
 &trans  &trans    &kp TILDE  &kp CARET   &kp UNDER    &trans          &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &kp PIPE  &kp PLUS   &kp MINUS   &kp EQUAL    &kp ASTERISK    &trans  &kp N3  &kp N1  &kp N5  &kp N7  &trans
 &trans  &trans    &kp HASH   &kp DOLLAR  &kp PERCENT  &trans          &trans  &kp N9  &trans  &trans  &trans  &trans
-                             &trans      &trans       &trans          &trans  &on 3   &trans
+                             &trans      &trans       &trans          &trans  &on 5   &trans
             >;
         };
 
@@ -106,16 +106,16 @@
 &trans  &trans  &trans  &trans  &trans  &trans    &trans     &kp BSLH  &kp LBRC  &kp RBRC  &trans    &trans
 &trans  &kp N6  &kp N4  &kp N0  &kp N2  &trans    &kp GRAVE  &kp AT    &kp LPAR  &kp RPAR  &kp EXCL  &trans
 &trans  &trans  &trans  &trans  &kp N8  &trans    &trans     &kp AMPS  &kp LBKT  &kp RBKT  &trans    &trans
-                        &trans  &on 3   &trans    &trans     &trans    &trans
+                        &trans  &on 5   &trans    &trans     &trans    &trans
             >;
         };
 
-        num {
+        nav {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &kp N6  &kp N4  &kp N0  &kp N2  &trans    &trans  &kp N3  &kp N1  &kp N5  &kp N7  &trans
-&trans  &trans  &trans  &trans  &kp N8  &trans    &trans  &kp N9  &trans  &trans  &trans  &trans
-                        &trans  &off 3  &trans    &trans  &off 3  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans    &trans    &trans  &trans     &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &kp LEFT  &kp DOWN  &kp UP  &kp RIGHT  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans    &trans    &trans  &trans     &trans  &trans
+                        &trans  &trans  &trans    &trans    &trans    &trans
             >;
         };
 
@@ -125,6 +125,15 @@
 &trans  &sk LGUI  &sk LALT  &sk LCTRL  &sk LSHFT  &trans    &trans  &sk RSHFT  &sk RCTRL  &sk LALT  &sk RGUI  &trans
 &trans  &trans    &trans    &trans     &trans     &trans    &trans  &trans     &trans     &trans    &trans    &trans
                             &trans     &trans     &trans    &trans  &trans     &trans
+            >;
+        };
+
+        num {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &kp N6  &kp N4  &kp N0  &kp N2  &trans    &trans  &kp N3  &kp N1  &kp N5  &kp N7  &trans
+&trans  &trans  &trans  &trans  &kp N8  &trans    &trans  &kp N9  &trans  &trans  &trans  &trans
+                        &trans  &off 5  &trans    &trans  &off 5  &trans
             >;
         };
 
@@ -142,7 +151,7 @@
 &trans  &kp TAB    &kp Q  &kp W  &kp E     &kp R        &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &kp LSHFT  &kp A  &kp S  &kp D     &kp F        &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &kp LCTRL  &kp Z  &kp X  &kp C     &kp V        &trans  &trans  &trans  &trans  &trans  &trans
-                          &mo 7  &kp LALT  &kp SPACE    &trans  &trans  &trans
+                          &mo 8  &kp LALT  &kp SPACE    &trans  &trans  &trans
             >;
         };
 
