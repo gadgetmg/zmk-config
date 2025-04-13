@@ -18,7 +18,6 @@
             bindings = <&kp TAB>;
             key-positions = <2 3>;
             timeout-ms = <30>;
-            layers = <0 6 6>;
         };
 
         backspace {
@@ -31,7 +30,6 @@
             bindings = <&kp ESC>;
             key-positions = <26 27>;
             timeout-ms = <30>;
-            layers = <0 6 6>;
         };
 
         enter {
@@ -43,7 +41,6 @@
         function {
             bindings = <&sl 6>;
             key-positions = <36 41>;
-            layers = <0 6 6>;
         };
 
         dash {
