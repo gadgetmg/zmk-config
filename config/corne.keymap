@@ -42,12 +42,6 @@
             layers = <0 1 2>;
         };
 
-        function {
-            bindings = <&mo 4>;
-            key-positions = <37 40>;
-            layers = <0>;
-        };
-
         dash {
             bindings = <&kp MINUS>;
             key-positions = <15 14>;
@@ -60,54 +54,6 @@
             key-positions = <21 20>;
             timeout-ms = <10>;
             layers = <0 1 2>;
-        };
-
-        lgui {
-            bindings = <&sk LGUI>;
-            key-positions = <13 37>;
-            layers = <0>;
-        };
-
-        lalt {
-            bindings = <&sk LALT>;
-            key-positions = <37 14>;
-            layers = <0>;
-        };
-
-        lctrl {
-            bindings = <&sk LCTRL>;
-            key-positions = <37 15>;
-            layers = <0>;
-        };
-
-        lshft {
-            bindings = <&sk LSHFT>;
-            key-positions = <37 16>;
-            layers = <0>;
-        };
-
-        rgui {
-            bindings = <&sk RGUI>;
-            key-positions = <22 40>;
-            layers = <0>;
-        };
-
-        ralt {
-            bindings = <&sk LALT>;
-            key-positions = <40 21>;
-            layers = <0>;
-        };
-
-        rcrtl {
-            bindings = <&sk RCTRL>;
-            key-positions = <40 20>;
-            layers = <0>;
-        };
-
-        rshft {
-            bindings = <&sk RSHFT>;
-            key-positions = <40 19>;
-            layers = <0>;
         };
 
         caps_word {
@@ -173,19 +119,19 @@
 
         num {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &kp N6  &kp N4  &kp N0  &kp N2  &trans    &trans  &kp N3  &kp N1  &kp N5  &kp N7  &trans
-&trans  &trans  &trans  &trans  &kp N8  &trans    &trans  &kp N9  &trans  &trans  &trans  &trans
-                        &trans  &trans  &trans    &trans  &trans  &trans
+&trans  &trans       &trans       &trans        &trans        &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &mt LGUI N6  &mt LALT N4  &mt LCTRL N0  &mt LSHFT N2  &trans    &trans  &kp N3  &kp N1  &kp N5  &kp N7  &trans
+&trans  &trans       &trans       &trans        &kp N8        &trans    &trans  &kp N9  &trans  &trans  &trans  &trans
+                                  &trans        &trans        &trans    &trans  &mo 4   &trans
             >;
         };
 
         sym {
             bindings = <
-&trans  &trans    &kp TILDE  &kp CARET   &kp UNDER    &trans          &trans     &kp BSLH  &kp LBRC  &kp RBRC  &trans    &trans
-&trans  &kp PIPE  &kp PLUS   &kp MINUS   &kp EQUAL    &kp ASTERISK    &kp GRAVE  &kp AT    &kp LPAR  &kp RPAR  &kp EXCL  &trans
-&trans  &trans    &kp HASH   &kp DOLLAR  &kp PERCENT  &trans          &trans     &kp AMPS  &kp LBKT  &kp RBKT  &trans    &trans
-                             &trans      &trans       &trans          &trans     &trans    &trans
+&trans  &trans    &kp TILDE  &kp CARET   &kp UNDER    &trans          &trans     &kp BSLH      &kp LBRC        &kp RBRC       &trans         &trans
+&trans  &kp PIPE  &kp PLUS   &kp MINUS   &kp EQUAL    &kp ASTERISK    &kp GRAVE  &mt RSHFT AT  &mt RCTRL LPAR  &mt LALT RPAR  &mt RGUI EXCL  &trans
+&trans  &trans    &kp HASH   &kp DOLLAR  &kp PERCENT  &trans          &trans     &kp AMPS      &kp LBKT        &kp RBKT       &trans         &trans
+                             &trans      &mo 4        &trans          &trans     &trans        &trans
             >;
         };
 
