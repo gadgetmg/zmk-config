@@ -18,51 +18,102 @@
             bindings = <&kp TAB>;
             key-positions = <2 3>;
             timeout-ms = <30>;
+            layers = <0 1 2>;
         };
 
         backspace {
             bindings = <&kp BSPC>;
             key-positions = <8 9>;
             timeout-ms = <30>;
+            layers = <0 1 2>;
         };
 
         escape {
             bindings = <&kp ESC>;
             key-positions = <26 27>;
             timeout-ms = <30>;
+            layers = <0 1 2>;
         };
 
         enter {
             bindings = <&kp ENTER>;
             key-positions = <32 33>;
             timeout-ms = <30>;
+            layers = <0 1 2>;
         };
 
         function {
-            bindings = <&sl 7>;
-            key-positions = <36 41>;
+            bindings = <&mo 4>;
+            key-positions = <37 40>;
+            layers = <0>;
         };
 
         dash {
             bindings = <&kp MINUS>;
             key-positions = <15 14>;
             timeout-ms = <10>;
+            layers = <0 1 2>;
         };
 
         quote {
             bindings = <&kp SQT>;
             key-positions = <21 20>;
             timeout-ms = <10>;
+            layers = <0 1 2>;
         };
 
-        callum_left {
-            bindings = <&mo 6>;
-            key-positions = <36 37>;
+        lgui {
+            bindings = <&sk LGUI>;
+            key-positions = <13 37>;
+            layers = <0>;
         };
 
-        callum_right {
-            bindings = <&mo 6>;
-            key-positions = <40 41>;
+        lalt {
+            bindings = <&sk LALT>;
+            key-positions = <37 14>;
+            layers = <0>;
+        };
+
+        lctrl {
+            bindings = <&sk LCTRL>;
+            key-positions = <37 15>;
+            layers = <0>;
+        };
+
+        lshft {
+            bindings = <&sk LSHFT>;
+            key-positions = <37 16>;
+            layers = <0>;
+        };
+
+        rgui {
+            bindings = <&sk RGUI>;
+            key-positions = <22 40>;
+            layers = <0>;
+        };
+
+        ralt {
+            bindings = <&sk LALT>;
+            key-positions = <40 21>;
+            layers = <0>;
+        };
+
+        rcrtl {
+            bindings = <&sk RCTRL>;
+            key-positions = <40 20>;
+            layers = <0>;
+        };
+
+        rshft {
+            bindings = <&sk RSHFT>;
+            key-positions = <40 19>;
+            layers = <0>;
+        };
+
+        caps_word {
+            bindings = <&caps_word>;
+            key-positions = <38 39>;
+            timeout-ms = <10>;
         };
     };
 
@@ -113,46 +164,10 @@
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
             bindings = <
-&none  &kp Q  &kp W  &kp E      &kp R  &kp T        &kp Y        &kp U  &kp I        &kp O    &kp P     &none
-&none  &kp A  &kp S  &kp D      &kp F  &kp G        &kp H        &kp J  &kp K        &kp L    &kp SEMI  &none
-&none  &kp Z  &kp X  &kp C      &kp V  &kp B        &kp N        &kp M  &kp COMMA    &kp DOT  &kp FSLH  &none
-                     &kp LCTRL  &mo 1  &kp LSHFT    &lt 3 SPACE  &mo 2  &kmo LGUI 4
-            >;
-        };
-
-        lsym {
-            bindings = <
-&trans  &trans    &kp TILDE  &kp CARET   &kp UNDER    &trans          &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &kp PIPE  &kp PLUS   &kp MINUS   &kp EQUAL    &kp ASTERISK    &trans  &kp N3  &kp N1  &kp N5  &kp N7  &trans
-&trans  &trans    &kp HASH   &kp DOLLAR  &kp PERCENT  &trans          &trans  &kp N9  &trans  &trans  &trans  &trans
-                             &trans      &trans       &trans          &trans  &on 5   &trans
-            >;
-        };
-
-        rsym {
-            bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans    &trans     &kp BSLH  &kp LBRC  &kp RBRC  &trans    &trans
-&trans  &kp N6  &kp N4  &kp N0  &kp N2  &trans    &kp GRAVE  &kp AT    &kp LPAR  &kp RPAR  &kp EXCL  &trans
-&trans  &trans  &trans  &trans  &kp N8  &trans    &trans     &kp AMPS  &kp LBKT  &kp RBKT  &trans    &trans
-                        &trans  &on 5   &trans    &trans     &trans    &trans
-            >;
-        };
-
-        nav {
-            bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans    &trans    &trans    &trans  &trans     &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &kp LEFT  &kp DOWN  &kp UP  &kp RIGHT  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans    &trans    &trans  &trans     &trans  &trans
-                        &trans  &trans  &trans    &trans    &trans    &trans
-            >;
-        };
-
-        wnav {
-            bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &kp N6  &kp N4  &kp N0  &kp N2  &trans    &trans  &kp N3  &kp N1  &kp N5  &kp N7  &trans
-&trans  &trans  &trans  &trans  &kp N8  &trans    &trans  &kp N9  &trans  &trans  &trans  &trans
-                        &trans  &trans  &trans    &trans  &trans  &trans
+&none  &kp Q  &kp W  &kp E      &kp R  &kp T        &kp Y        &kp U  &kp I      &kp O    &kp P     &none
+&none  &kp A  &kp S  &kp D      &kp F  &kp G        &kp H        &kp J  &kp K      &kp L    &kp SEMI  &none
+&none  &kp Z  &kp X  &kp C      &kp V  &kp B        &kp N        &kp M  &kp COMMA  &kp DOT  &kp FSLH  &none
+                     &kp LCTRL  &mo 1  &kp LSHFT    &lt 3 SPACE  &mo 2  &kp LGUI
             >;
         };
 
@@ -161,25 +176,34 @@
 &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &kp N6  &kp N4  &kp N0  &kp N2  &trans    &trans  &kp N3  &kp N1  &kp N5  &kp N7  &trans
 &trans  &trans  &trans  &trans  &kp N8  &trans    &trans  &kp N9  &trans  &trans  &trans  &trans
-                        &trans  &off 5  &trans    &trans  &off 5  &trans
+                        &trans  &trans  &trans    &trans  &trans  &trans
             >;
         };
 
-        callum {
+        sym {
             bindings = <
-&trans  &trans    &trans    &trans     &trans     &trans    &trans  &trans     &trans     &trans    &trans    &trans
-&trans  &sk LGUI  &sk LALT  &sk LCTRL  &sk LSHFT  &trans    &trans  &sk RSHFT  &sk RCTRL  &sk LALT  &sk RGUI  &trans
-&trans  &trans    &trans    &trans     &trans     &trans    &trans  &trans     &trans     &trans    &trans    &trans
-                            &trans     &trans     &trans    &trans  &trans     &trans
+&trans  &trans    &kp TILDE  &kp CARET   &kp UNDER    &trans          &trans     &kp BSLH  &kp LBRC  &kp RBRC  &trans    &trans
+&trans  &kp PIPE  &kp PLUS   &kp MINUS   &kp EQUAL    &kp ASTERISK    &kp GRAVE  &kp AT    &kp LPAR  &kp RPAR  &kp EXCL  &trans
+&trans  &trans    &kp HASH   &kp DOLLAR  &kp PERCENT  &trans          &trans     &kp AMPS  &kp LBKT  &kp RBKT  &trans    &trans
+                             &trans      &trans       &trans          &trans     &trans    &trans
+            >;
+        };
+
+        nav {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans    &trans    &trans    &none   &kp DEL    &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &kp LEFT  &kp DOWN  &kp UP  &kp RIGHT  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans    &trans    &trans  &trans     &trans  &trans
+                        &trans  &trans  &trans    &trans    &trans    &trans
             >;
         };
 
         function {
             bindings = <
-&none  &none        &bt BT_SEL 4  &bt BT_SEL 0  &bt BT_SEL 2  &none         &none       &bt BT_SEL 3  &bt BT_SEL 1  &bt BT_CLR  &bt BT_CLR_ALL  &none
-&none  &kp F6       &kp F4        &kp F10       &kp F2        &kp F12       &kp F11     &kp F3        &kp F1        &kp F5      &kp F7          &none
-&none  &bootloader  &none         &none         &kp F8        &sys_reset    &sys_reset  &kp F9        &none         &none       &bootloader     &none
-                                  &trans        &trans        &trans        &trans      &trans        &trans
+&none  &none        &bt BT_SEL 4     &bt BT_SEL 0     &bt BT_SEL 2  &none         &none       &bt BT_SEL 3  &bt BT_SEL 1  &bt BT_CLR  &bt BT_CLR_ALL  &none
+&none  &kp F6       &kp F4           &kp F10          &kp F2        &kp F12       &kp F11     &kp F3        &kp F1        &kp F5      &kp F7          &none
+&none  &bootloader  &kp PAUSE_BREAK  &kp PRINTSCREEN  &kp F8        &sys_reset    &sys_reset  &kp F9        &kp INSERT    &none       &bootloader     &none
+                                     &trans           &trans        &trans        &trans      &trans        &trans
             >;
         };
 
@@ -188,7 +212,7 @@
 &trans  &kp TAB    &kp Q  &kp W  &kp E     &kp R        &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &kp LSHFT  &kp A  &kp S  &kp D     &kp F        &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &kp LCTRL  &kp Z  &kp X  &kp C     &kp V        &trans  &trans  &trans  &trans  &trans  &trans
-                          &mo 9  &kp LALT  &kp SPACE    &trans  &trans  &trans
+                          &mo 6  &kp LALT  &kp SPACE    &trans  &trans  &trans
             >;
         };
 
