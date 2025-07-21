@@ -15,7 +15,7 @@
     release-after-ms = <150>;
 };
 
-&mt { flavor = "tap-preferred"; };
+&mt { flavor = "balanced"; };
 
 / {
     combos {
