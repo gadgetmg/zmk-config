@@ -124,19 +124,19 @@
 
         num {
             bindings = <
-&trans  &trans       &trans       &trans        &trans        &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &mt LGUI N6  &mt LALT N4  &mt LCTRL N0  &mt LSHFT N2  &trans    &trans  &kp N3  &kp N1  &kp N5  &kp N7  &trans
-&trans  &trans       &trans       &trans        &kp N8        &trans    &trans  &kp N9  &trans  &trans  &trans  &trans
-                                  &trans        &trans        &trans    &trans  &mo 4   &trans
+&trans  &trans       &trans       &trans        &trans        &trans    &trans  &trans        &trans        &trans       &trans       &trans
+&trans  &mt LGUI N6  &mt LALT N4  &mt LCTRL N0  &mt LSHFT N2  &trans    &trans  &mt RSHFT N3  &mt RCTRL N1  &mt LALT N5  &mt RGUI N7  &trans
+&trans  &trans       &trans       &trans        &kp N8        &trans    &trans  &kp N9        &trans        &trans       &trans       &trans
+                                  &trans        &trans        &trans    &trans  &mo 4         &trans
             >;
         };
 
         sym {
             bindings = <
-&trans  &trans    &kp TILDE  &kp CARET   &kp UNDER    &trans          &trans     &kp BSLH      &kp LBRC        &kp RBRC       &trans         &trans
-&trans  &kp PIPE  &kp PLUS   &kp MINUS   &kp EQUAL    &kp ASTERISK    &kp GRAVE  &mt RSHFT AT  &mt RCTRL LPAR  &mt LALT RPAR  &mt RGUI EXCL  &trans
-&trans  &trans    &kp HASH   &kp DOLLAR  &kp PERCENT  &trans          &trans     &kp AMPS      &kp LBKT        &kp RBKT       &trans         &trans
-                             &trans      &mo 4        &trans          &trans     &trans        &trans
+&trans  &trans         &kp TILDE      &kp CARET        &kp UNDER        &trans          &trans     &kp BSLH      &kp LBRC        &kp RBRC       &trans         &trans
+&trans  &mt LGUI PIPE  &mt LALT PLUS  &mt LCTRL MINUS  &mt LSHFT EQUAL  &kp ASTERISK    &kp GRAVE  &mt RSHFT AT  &mt RCTRL LPAR  &mt LALT RPAR  &mt RGUI EXCL  &trans
+&trans  &trans         &kp HASH       &kp DOLLAR       &kp PERCENT      &trans          &trans     &kp AMPS      &kp LBKT        &kp RBKT       &trans         &trans
+                                      &trans           &mo 4            &trans          &trans     &trans        &trans
             >;
         };
 
