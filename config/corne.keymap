@@ -16,8 +16,9 @@
 };
 
 &mt {
-    flavor = "tap-preferred";
-    tapping-term-ms = <250>;
+    flavor = "balanced";
+    tapping-term-ms = <300>;
+    require-prior-idle-ms = <175>;
 };
 
 / {
