@@ -29,7 +29,7 @@
             bindings = <&kp TAB>;
             key-positions = <2 3>;
             timeout-ms = <30>;
-            layers = <0 1 2>;
+            layers = <0 1 2 3>;
         };
 
         backspace {
@@ -43,7 +43,7 @@
             bindings = <&kp ESC>;
             key-positions = <26 27>;
             timeout-ms = <30>;
-            layers = <0 1 2>;
+            layers = <0 1 2 3>;
         };
 
         enter {
@@ -54,14 +54,14 @@
         };
 
         dash {
-            bindings = <&kp MINUS>;
+            bindings = <&mt LC(LALT) MINUS>;
             key-positions = <15 14>;
             timeout-ms = <20>;
             layers = <0>;
         };
 
         quote {
-            bindings = <&kp SQT>;
+            bindings = <&mt RC(LALT) APOS>;
             key-positions = <21 20>;
             timeout-ms = <20>;
             layers = <0>;
