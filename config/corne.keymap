@@ -81,6 +81,32 @@
             #binding-cells = <1>;
             toggle-mode = "off";
         };
+
+        mt_l: mt_l {
+            compatible = "zmk,behavior-hold-tap";
+            label = "MT_L";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <300>;
+            hold-trigger-key-positions = <6 18 30 39 40 41 31 19 7 8 20 32 33 21 9 22 10 34 35 23 11>;
+            hold-trigger-on-release;
+            flavor = "balanced";
+            require-prior-idle-ms = <175>;
+        };
+
+        mt_r: mt_r {
+            compatible = "zmk,behavior-hold-tap";
+            label = "MT_R";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <300>;
+            hold-trigger-key-positions = <0 12 24 1 13 25 26 14 2 15 27 28 5 4 3 16 17 29 37 36 38>;
+            hold-trigger-on-release;
+            flavor = "balanced";
+            require-prior-idle-ms = <175>;
+        };
     };
 
     macros {
@@ -115,10 +141,10 @@
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
             bindings = <
-&none  &kp Q       &kp W       &kp E        &kp R        &kp T        &kp Y        &kp U        &kp I        &kp O       &kp P          &none
-&none  &mt LGUI A  &mt LALT S  &mt LCTRL D  &mt LSHFT F  &kp G        &kp H        &mt RSHFT J  &mt RCTRL K  &mt LALT L  &mt RGUI SEMI  &none
-&none  &kp Z       &kp X       &kp C        &kp V        &kp B        &kp N        &kp M        &kp COMMA    &kp DOT     &kp FSLH       &none
-                               &kp LCTRL    &mo 1        &sk LSHFT    &lt 3 SPACE  &mo 2        &kp LGUI
+&none  &kp Q         &kp W         &kp E          &kp R          &kp T        &kp Y        &kp U          &kp I          &kp O         &kp P            &none
+&none  &mt_l LGUI A  &mt_l LALT S  &mt_l LCTRL D  &mt_l LSHFT F  &kp G        &kp H        &mt_r RSHFT J  &mt_r RCTRL K  &mt_r LALT L  &mt_r RGUI SEMI  &none
+&none  &kp Z         &kp X         &kp C          &kp V          &kp B        &kp N        &kp M          &kp COMMA      &kp DOT       &kp FSLH         &none
+                                   &kp LCTRL      &mo 1          &sk LSHFT    &lt 3 SPACE  &mo 2          &kp LGUI
             >;
         };
 
