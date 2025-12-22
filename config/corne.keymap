@@ -168,10 +168,10 @@
 
         nav {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans    &trans    &trans    &none   &kp DEL    &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &kp LEFT  &kp DOWN  &kp UP  &kp RIGHT  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans    &trans    &trans  &trans     &trans  &trans
-                        &trans  &trans  &trans    &trans    &trans    &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &kp DOWN      &kp RIGHT  &none   &kp DEL    &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &kp LEFT      &kp DOWN   &kp UP  &kp RIGHT  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &kp UP_ARROW  &kp LEFT   &trans  &trans     &trans  &trans
+                        &trans  &trans  &trans    &trans        &trans     &trans
             >;
         };
 
@@ -181,24 +181,6 @@
 &none  &kp F6       &kp F4           &kp F10          &kp F2        &kp F12       &kp F11     &kp F3        &kp F1        &kp F5      &kp F7          &none
 &none  &bootloader  &kp PAUSE_BREAK  &kp PRINTSCREEN  &kp F8        &sys_reset    &sys_reset  &kp F9        &kp INSERT    &none       &bootloader     &none
                                      &trans           &trans        &trans        &trans      &trans        &trans
-            >;
-        };
-
-        wasd_base {
-            bindings = <
-&trans  &kp TAB    &kp Q  &kp W  &kp E     &kp R        &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &kp LSHFT  &kp A  &kp S  &kp D     &kp F        &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &kp LCTRL  &kp Z  &kp X  &kp C     &kp V        &trans  &trans  &trans  &trans  &trans  &trans
-                          &mo 6  &kp LALT  &kp SPACE    &trans  &trans  &trans
-            >;
-        };
-
-        wasd_alt {
-            bindings = <
-&trans  &kp ESC    &kp N7  &kp N8  &kp N9  &kp T    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &kp GRAVE  &kp N4  &kp N5  &kp N6  &kp G    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &kp N0     &kp N1  &kp N2  &kp N3  &kp B    &trans  &trans  &trans  &trans  &trans  &trans
-                           &trans  &none   &none    &trans  &trans  &trans
             >;
         };
     };
