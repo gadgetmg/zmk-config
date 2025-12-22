@@ -150,10 +150,10 @@
 
         function {
             bindings = <
-&none  &none          &bt BT_SEL 4     &bt BT_SEL 0     &bt BT_SEL 2    &none         &none       &bt BT_SEL 3    &bt BT_SEL 1    &bt BT_CLR     &bt BT_CLR_ALL  &none
-&none  &mt_l LGUI F6  &mt_l LALT F4    &mt_l LCTRL F10  &mt_l LSHFT F2  &kp F12       &kp F11     &mt_r RSHFT F3  &mt_r RCTRL F1  &mt_r LALT F5  &mt_r RGUI F7   &none
-&none  &bootloader    &kp PAUSE_BREAK  &kp PRINTSCREEN  &kp F8          &sys_reset    &sys_reset  &kp F9          &kp INSERT      &none          &bootloader     &none
-                                       &none            &trans          &trans        &kp SPACE   &trans          &none
+&none  &studio_unlock  &bt BT_SEL 4     &bt BT_SEL 0     &bt BT_SEL 2    &none         &none       &bt BT_SEL 3    &bt BT_SEL 1    &bt BT_CLR     &bt BT_CLR_ALL  &none
+&none  &mt_l LGUI F6   &mt_l LALT F4    &mt_l LCTRL F10  &mt_l LSHFT F2  &kp F12       &kp F11     &mt_r RSHFT F3  &mt_r RCTRL F1  &mt_r LALT F5  &mt_r RGUI F7   &none
+&none  &bootloader     &kp PAUSE_BREAK  &kp PRINTSCREEN  &kp F8          &sys_reset    &sys_reset  &kp F9          &kp INSERT      &none          &bootloader     &none
+                                        &none            &trans          &trans        &kp SPACE   &trans          &none
             >;
         };
     };
