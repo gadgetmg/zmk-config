@@ -8,7 +8,7 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 
-&caps_word { continue-list = <UNDERSCORE BACKSPACE DELETE SEMICOLON>; };
+&caps_word { continue-list = <UNDERSCORE BACKSPACE DELETE SEMICOLON MINUS>; };
 
 &sk {
     quick-release;
@@ -18,7 +18,7 @@
 &mt {
     flavor = "balanced";
     tapping-term-ms = <300>;
-    require-prior-idle-ms = <175>;
+    require-prior-idle-ms = <125>;
 };
 
 / {
@@ -69,19 +69,6 @@
     };
 
     behaviors {
-        on: on {
-            compatible = "zmk,behavior-toggle-layer";
-            label = "ON";
-            #binding-cells = <1>;
-        };
-
-        off: off {
-            compatible = "zmk,behavior-toggle-layer";
-            label = "OFF";
-            #binding-cells = <1>;
-            toggle-mode = "off";
-        };
-
         mt_l: mt_l {
             compatible = "zmk,behavior-hold-tap";
             label = "MT_L";
@@ -89,10 +76,10 @@
 
             #binding-cells = <2>;
             tapping-term-ms = <300>;
-            hold-trigger-key-positions = <6 18 30 39 40 41 31 19 7 8 20 32 33 21 9 22 10 34 35 23 11>;
+            hold-trigger-key-positions = <6 18 30 31 19 7 8 20 32 33 21 9 22 10 34 35 23 11>;
             hold-trigger-on-release;
             flavor = "balanced";
-            require-prior-idle-ms = <175>;
+            require-prior-idle-ms = <125>;
         };
 
         mt_r: mt_r {
@@ -102,31 +89,17 @@
 
             #binding-cells = <2>;
             tapping-term-ms = <300>;
-            hold-trigger-key-positions = <0 12 24 1 13 25 26 14 2 15 27 28 5 4 3 16 17 29 37 36 38>;
+            hold-trigger-key-positions = <0 12 24 1 13 25 26 14 2 15 27 28 5 4 3 16 17 29>;
             hold-trigger-on-release;
             flavor = "balanced";
-            require-prior-idle-ms = <175>;
+            require-prior-idle-ms = <125>;
         };
-    };
 
-    macros {
-        kmo: ml {
-            compatible = "zmk,behavior-macro-two-param";
-            #binding-cells = <2>;
-            bindings =
-                <&macro_param_1to1>,
-                <&macro_press>,
-                <&kp MACRO_PLACEHOLDER &macro_param_2to1>,
-                <&macro_press>,
-                <&mo MACRO_PLACEHOLDER>,
-                <&macro_pause_for_release>,
-                <&macro_param_1to1>,
-                <&macro_release>,
-                <&kp MACRO_PLACEHOLDER &macro_param_2to1>,
-                <&macro_release>,
-                <&mo MACRO_PLACEHOLDER>;
-
-            label = "ML";
+        shift_caps: shift_caps {
+            compatible = "zmk,behavior-tap-dance";
+            label = "SHIFT_CAPS";
+            #binding-cells = <0>;
+            bindings = <&sk LSHFT>, <&caps_word>;
         };
     };
 
@@ -141,46 +114,46 @@
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
             bindings = <
-&none  &kp Q         &kp W         &kp E          &kp R          &kp T        &kp Y        &kp U          &kp I          &kp O         &kp P            &none
-&none  &mt_l LGUI A  &mt_l LALT S  &mt_l LCTRL D  &mt_l LSHFT F  &kp G        &kp H        &mt_r RSHFT J  &mt_r RCTRL K  &mt_r LALT L  &mt_r RGUI SEMI  &none
-&none  &kp Z         &kp X         &kp C          &kp V          &kp B        &kp N        &kp M          &kp COMMA      &kp DOT       &kp FSLH         &none
-                                   &kp LCTRL      &mo 1          &sk LSHFT    &lt 3 SPACE  &mo 2          &kp LGUI
+&none  &kp Q         &kp W         &kp E          &kp R          &kp T          &kp Y        &kp U          &kp I          &kp O         &kp P            &none
+&none  &mt_l LGUI A  &mt_l LALT S  &mt_l LCTRL D  &mt_l LSHFT F  &kp G          &kp H        &mt_r RSHFT J  &mt_r RCTRL K  &mt_r LALT L  &mt_r RGUI SEMI  &none
+&none  &kp Z         &kp X         &kp C          &kp V          &kp B          &kp N        &kp M          &kp COMMA      &kp DOT       &kp FSLH         &none
+                                   &none          &mo 1          &shift_caps    &lt 3 SPACE  &mo 2          &none
             >;
         };
 
         num {
             bindings = <
-&trans  &trans       &trans       &trans        &trans        &trans    &trans  &trans        &trans        &trans       &trans       &trans
-&trans  &mt LGUI N6  &mt LALT N4  &mt LCTRL N0  &mt LSHFT N2  &trans    &trans  &mt RSHFT N3  &mt RCTRL N1  &mt LALT N5  &mt RGUI N7  &trans
-&trans  &trans       &trans       &trans        &kp N8        &trans    &trans  &kp N9        &trans        &trans       &trans       &trans
-                                  &trans        &trans        &trans    &trans  &mo 4         &trans
+&trans  &trans         &trans         &trans          &trans          &trans    &trans     &trans          &trans          &trans         &trans         &trans
+&trans  &mt_l LGUI N6  &mt_l LALT N4  &mt_l LCTRL N0  &mt_l LSHFT N2  &trans    &trans     &mt_r RSHFT N3  &mt_r RCTRL N1  &mt_r LALT N5  &mt_r RGUI N7  &trans
+&trans  &trans         &trans         &trans          &kp N8          &trans    &trans     &kp N9          &trans          &trans         &trans         &trans
+                                      &trans          &trans          &trans    &kp SPACE  &mo 4           &trans
             >;
         };
 
         sym {
             bindings = <
-&trans  &trans         &kp TILDE      &kp CARET        &kp UNDER        &trans          &trans     &kp BSLH      &kp LBRC        &kp RBRC       &trans         &trans
-&trans  &mt LGUI PIPE  &mt LALT PLUS  &mt LCTRL MINUS  &mt LSHFT EQUAL  &kp ASTERISK    &kp GRAVE  &mt RSHFT AT  &mt RCTRL LPAR  &mt LALT RPAR  &mt RGUI EXCL  &trans
-&trans  &trans         &kp HASH       &kp DOLLAR       &kp PERCENT      &trans          &trans     &kp AMPS      &kp LBKT        &kp RBKT       &trans         &trans
-                                      &trans           &mo 4            &trans          &trans     &trans        &trans
+&trans  &trans           &kp TILDE        &kp CARET          &kp UNDER          &trans          &trans     &kp BSLH        &kp LBRC          &kp RBRC         &trans           &trans
+&trans  &mt_l LGUI PIPE  &mt_l LALT PLUS  &mt_l LCTRL MINUS  &mt_l LSHFT EQUAL  &kp ASTERISK    &kp GRAVE  &mt_r RSHFT AT  &mt_r RCTRL LPAR  &mt_r LALT RPAR  &mt_r RGUI EXCL  &trans
+&trans  &trans           &kp HASH         &kp DOLLAR         &kp PERCENT        &trans          &trans     &kp AMPS        &kp LBKT          &kp RBKT         &trans           &trans
+                                          &none              &mo 4              &trans          &kp SPACE  &trans          &none
             >;
         };
 
         nav {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans    &kp DOWN      &kp RIGHT  &none   &kp DEL    &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &kp LEFT      &kp DOWN   &kp UP  &kp RIGHT  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &kp UP_ARROW  &kp LEFT   &trans  &trans     &trans  &trans
-                        &trans  &trans  &trans    &trans        &trans     &trans
+&none  &none     &kp LC(RIGHT)  &kp HOME   &none      &none           &kp DOWN      &kp RIGHT         &kp PG_UP       &none             &none     &none
+&none  &kp LGUI  &kp LALT       &kp LCTRL  &kp LSHFT  &kp PG_DN       &kp LEFT      &mt_r RSHFT DOWN  &mt_r RCTRL UP  &mt_r LALT RIGHT  &kp RGUI  &none
+&none  &none     &kp DEL        &kp END    &none      &kp LC(LEFT)    &kp UP_ARROW  &kp LEFT          &none           &none             &none     &none
+                                &none      &none      &trans          &trans        &none             &none
             >;
         };
 
         function {
             bindings = <
-&none  &none        &bt BT_SEL 4     &bt BT_SEL 0     &bt BT_SEL 2  &none         &none       &bt BT_SEL 3  &bt BT_SEL 1  &bt BT_CLR  &bt BT_CLR_ALL  &none
-&none  &kp F6       &kp F4           &kp F10          &kp F2        &kp F12       &kp F11     &kp F3        &kp F1        &kp F5      &kp F7          &none
-&none  &bootloader  &kp PAUSE_BREAK  &kp PRINTSCREEN  &kp F8        &sys_reset    &sys_reset  &kp F9        &kp INSERT    &none       &bootloader     &none
-                                     &trans           &trans        &trans        &trans      &trans        &trans
+&none  &none          &bt BT_SEL 4     &bt BT_SEL 0     &bt BT_SEL 2    &none         &none       &bt BT_SEL 3    &bt BT_SEL 1    &bt BT_CLR     &bt BT_CLR_ALL  &none
+&none  &mt_l LGUI F6  &mt_l LALT F4    &mt_l LCTRL F10  &mt_l LSHFT F2  &kp F12       &kp F11     &mt_r RSHFT F3  &mt_r RCTRL F1  &mt_r LALT F5  &mt_r RGUI F7   &none
+&none  &bootloader    &kp PAUSE_BREAK  &kp PRINTSCREEN  &kp F8          &sys_reset    &sys_reset  &kp F9          &kp INSERT      &none          &bootloader     &none
+                                       &none            &trans          &trans        &kp SPACE   &trans          &none
             >;
         };
     };
