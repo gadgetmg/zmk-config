@@ -11,13 +11,10 @@
 &sk {
     quick-release;
     release-after-ms = <150>;
+    lazy;
 };
 
-&mt {
-    flavor = "balanced";
-    tapping-term-ms = <300>;
-    require-prior-idle-ms = <125>;
-};
+&mt { tapping-term-ms = <150>; };
 
 / {
     combos {
@@ -26,43 +23,49 @@
         tab {
             bindings = <&kp TAB>;
             key-positions = <2 3>;
-            timeout-ms = <30>;
+            timeout-ms = <50>;
             layers = <0 1 2 3>;
+            slow-release;
         };
 
         backspace {
             bindings = <&kp BSPC>;
             key-positions = <8 9>;
-            timeout-ms = <30>;
+            timeout-ms = <50>;
             layers = <0 1 2>;
+            slow-release;
         };
 
         escape {
             bindings = <&kp ESC>;
             key-positions = <26 27>;
-            timeout-ms = <30>;
+            timeout-ms = <50>;
             layers = <0 1 2 3>;
+            slow-release;
         };
 
         enter {
             bindings = <&kp ENTER>;
             key-positions = <32 33>;
-            timeout-ms = <30>;
+            timeout-ms = <50>;
             layers = <0 1 2>;
+            slow-release;
         };
 
         dash {
             bindings = <&mt LC(LALT) MINUS>;
             key-positions = <15 14>;
-            timeout-ms = <20>;
+            timeout-ms = <50>;
             layers = <0>;
+            slow-release;
         };
 
         quote {
             bindings = <&mt RC(LALT) APOS>;
             key-positions = <21 20>;
-            timeout-ms = <20>;
+            timeout-ms = <50>;
             layers = <0>;
+            slow-release;
         };
     };
 
@@ -73,11 +76,11 @@
             bindings = <&kp>, <&kp>;
 
             #binding-cells = <2>;
-            tapping-term-ms = <300>;
-            hold-trigger-key-positions = <6 18 30 31 19 7 8 20 32 33 21 9 22 10 34 35 23 11>;
+            tapping-term-ms = <150>;
+            hold-trigger-key-positions = <36 37 38 39 40 41 6 7 8 9 10 11 18 19 20 21 22 23 30 31 32 33 34 35 40 41>;
             hold-trigger-on-release;
-            flavor = "balanced";
-            require-prior-idle-ms = <125>;
+            require-prior-idle-ms = <300>;
+            quick-tap-ms = <300>;
         };
 
         mt_r: mt_r {
@@ -86,11 +89,11 @@
             bindings = <&kp>, <&kp>;
 
             #binding-cells = <2>;
-            tapping-term-ms = <300>;
-            hold-trigger-key-positions = <0 12 24 1 13 25 26 14 2 15 27 28 5 4 3 16 17 29>;
+            tapping-term-ms = <150>;
+            hold-trigger-key-positions = <41 40 39 38 37 36 0 1 2 3 4 5 12 13 14 15 16 17 24 25 26 27 28 29>;
             hold-trigger-on-release;
-            flavor = "balanced";
-            require-prior-idle-ms = <125>;
+            require-prior-idle-ms = <300>;
+            quick-tap-ms = <300>;
         };
     };
 
@@ -145,6 +148,15 @@
 &none  &mt_l LGUI F6   &mt_l LALT F4    &mt_l LCTRL F10  &mt_l LSHFT F2  &kp F12       &kp F11     &mt_r RSHFT F3  &mt_r RCTRL F1  &mt_r LALT F5  &mt_r RGUI F7   &none
 &none  &bootloader     &kp PAUSE_BREAK  &kp PRINTSCREEN  &kp F8          &sys_reset    &sys_reset  &kp F9          &kp INSERT      &none          &bootloader     &none
                                         &none            &trans          &trans        &kp SPACE   &trans          &none
+            >;
+        };
+
+        layer_5 {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+                        &trans  &trans  &trans    &trans  &trans  &trans
             >;
         };
     };
