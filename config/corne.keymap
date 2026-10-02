@@ -49,22 +49,6 @@
             layers = <0 1 2>;
             slow-release;
         };
-
-        dash {
-            bindings = <&mt LC(LALT) MINUS>;
-            key-positions = <15 14>;
-            timeout-ms = <50>;
-            layers = <0>;
-            slow-release;
-        };
-
-        quote {
-            bindings = <&mt RC(LALT) APOS>;
-            key-positions = <21 20>;
-            timeout-ms = <50>;
-            layers = <0>;
-            slow-release;
-        };
     };
 
     behaviors {
@@ -126,10 +110,10 @@
 
         sym {
             bindings = <
-&trans  &trans           &kp TILDE        &kp CARET          &kp UNDER          &trans          &trans     &kp BSLH        &kp LBRC          &kp RBRC         &trans           &trans
-&trans  &mt_l LGUI PIPE  &mt_l LALT PLUS  &mt_l LCTRL MINUS  &mt_l LSHFT EQUAL  &kp ASTERISK    &kp GRAVE  &mt_r RSHFT AT  &mt_r RCTRL LPAR  &mt_r LALT RPAR  &mt_r RGUI EXCL  &trans
-&trans  &trans           &kp HASH         &kp DOLLAR         &kp PERCENT        &trans          &trans     &kp AMPS        &kp LBKT          &kp RBKT         &trans           &trans
-                                          &none              &mo 4              &trans          &kp SPACE  &trans          &none
+&trans  &trans           &kp TILDE        &kp CARET          &kp EXCL           &trans          &trans     &kp BSLH        &kp LBRC          &kp RBRC         &trans                   &trans
+&trans  &mt_l LGUI PIPE  &mt_l LALT PLUS  &mt_l LCTRL MINUS  &mt_l LSHFT EQUAL  &kp ASTERISK    &kp GRAVE  &mt_r RSHFT AT  &mt_r RCTRL LPAR  &mt_r LALT RPAR  &mt_r RGUI SINGLE_QUOTE  &trans
+&trans  &trans           &kp HASH         &kp DOLLAR         &kp PERCENT        &trans          &trans     &kp AMPS        &kp LBKT          &kp RBKT         &trans                   &trans
+                                          &trans             &mo 4              &trans          &kp SPACE  &trans          &trans
             >;
         };
 
@@ -148,15 +132,6 @@
 &none  &mt_l LGUI F6   &mt_l LALT F4    &mt_l LCTRL F10  &mt_l LSHFT F2  &kp F12       &kp F11     &mt_r RSHFT F3  &mt_r RCTRL F1  &mt_r LALT F5  &mt_r RGUI F7   &none
 &none  &bootloader     &kp PAUSE_BREAK  &kp PRINTSCREEN  &kp F8          &sys_reset    &sys_reset  &kp F9          &kp INSERT      &none          &bootloader     &none
                                         &none            &trans          &trans        &kp SPACE   &trans          &none
-            >;
-        };
-
-        layer_5 {
-            bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-                        &trans  &trans  &trans    &trans  &trans  &trans
             >;
         };
     };
