@@ -14,152 +14,154 @@
     lazy;
 };
 
-&mt { tapping-term-ms = <150>; };
+};
 
 / {
-    combos {
-        compatible = "zmk,combos";
 
-        tab {
-            bindings = <&kp TAB>;
-            key-positions = <2 3>;
-            timeout-ms = <50>;
-            layers = <0 1 2 3>;
-            slow-release;
-        };
+combos {
+    compatible = "zmk,combos";
 
-        backspace {
-            bindings = <&kp BSPC>;
-            key-positions = <8 9>;
-            timeout-ms = <50>;
-            layers = <0 1 2>;
-            slow-release;
-        };
-
-        escape {
-            bindings = <&kp ESC>;
-            key-positions = <26 27>;
-            timeout-ms = <50>;
-            layers = <0 1 2 3>;
-            slow-release;
-        };
-
-        enter {
-            bindings = <&kp ENTER>;
-            key-positions = <32 33>;
-            timeout-ms = <50>;
-            layers = <0 1 2>;
-            slow-release;
-        };
-
-        dash {
-            bindings = <&mt LC(LALT) MINUS>;
-            key-positions = <15 14>;
-            timeout-ms = <50>;
-            layers = <0>;
-            slow-release;
-        };
-
-        quote {
-            bindings = <&mt RC(LALT) APOS>;
-            key-positions = <21 20>;
-            timeout-ms = <50>;
-            layers = <0>;
-            slow-release;
-        };
+    tab {
+        bindings = <&kp TAB>;
+        key-positions = <2 3>;
+        timeout-ms = <50>;
+        layers = <0 1 2 3>;
+        slow-release;
     };
 
-    behaviors {
-        mt_l: mt_l {
-            compatible = "zmk,behavior-hold-tap";
-            label = "MT_L";
-            bindings = <&kp>, <&kp>;
-
-            #binding-cells = <2>;
-            tapping-term-ms = <150>;
-            hold-trigger-key-positions = <36 37 38 39 40 41 6 7 8 9 10 11 18 19 20 21 22 23 30 31 32 33 34 35 40 41>;
-            hold-trigger-on-release;
-            require-prior-idle-ms = <300>;
-            quick-tap-ms = <300>;
-        };
-
-        mt_r: mt_r {
-            compatible = "zmk,behavior-hold-tap";
-            label = "MT_R";
-            bindings = <&kp>, <&kp>;
-
-            #binding-cells = <2>;
-            tapping-term-ms = <150>;
-            hold-trigger-key-positions = <41 40 39 38 37 36 0 1 2 3 4 5 12 13 14 15 16 17 24 25 26 27 28 29>;
-            hold-trigger-on-release;
-            require-prior-idle-ms = <300>;
-            quick-tap-ms = <300>;
-        };
+    backspace {
+        bindings = <&kp BSPC>;
+        key-positions = <8 9>;
+        timeout-ms = <50>;
+        layers = <0 1 2>;
+        slow-release;
     };
 
-    keymap {
-        compatible = "zmk,keymap";
+    escape {
+        bindings = <&kp ESC>;
+        key-positions = <26 27>;
+        timeout-ms = <50>;
+        layers = <0 1 2 3>;
+        slow-release;
+    };
 
-        base {
-            // -----------------------------------------------------------------------------------------
-            // |  TAB |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  | BSPC |
-            // | CTRL |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  |  '   |
-            // | SHFT |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  | ESC  |
-            //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
+    enter {
+        bindings = <&kp ENTER>;
+        key-positions = <32 33>;
+        timeout-ms = <50>;
+        layers = <0 1 2>;
+        slow-release;
+    };
 
-            bindings = <
+    dash {
+        bindings = <&mt LC(LALT) MINUS>;
+        key-positions = <15 14>;
+        timeout-ms = <50>;
+        layers = <0>;
+        slow-release;
+    };
+
+    quote {
+        bindings = <&mt RC(LALT) APOS>;
+        key-positions = <21 20>;
+        timeout-ms = <50>;
+        layers = <0>;
+        slow-release;
+    };
+};
+
+behaviors {
+    mt_l: mt_l {
+        compatible = "zmk,behavior-hold-tap";
+        label = "MT_L";
+        bindings = <&kp>, <&kp>;
+
+        #binding-cells = <2>;
+        tapping-term-ms = <1000>;
+        hold-trigger-key-positions = <36 37 38 39 40 41 6 7 8 9 10 11 18 19 20 21 22 23 30 31 32 33 34 35 40 41>;
+        hold-trigger-on-release;
+        require-prior-idle-ms = <300>;
+        quick-tap-ms = <300>;
+    };
+
+    mt_r: mt_r {
+        compatible = "zmk,behavior-hold-tap";
+        label = "MT_R";
+        bindings = <&kp>, <&kp>;
+
+        #binding-cells = <2>;
+        tapping-term-ms = <1000>;
+        hold-trigger-key-positions = <41 40 39 38 37 36 0 1 2 3 4 5 12 13 14 15 16 17 24 25 26 27 28 29>;
+        hold-trigger-on-release;
+        require-prior-idle-ms = <300>;
+        quick-tap-ms = <300>;
+    };
+};
+
+keymap {
+    compatible = "zmk,keymap";
+
+    base {
+        // -----------------------------------------------------------------------------------------
+        // |  TAB |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  | BSPC |
+        // | CTRL |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  |  '   |
+        // | SHFT |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  | ESC  |
+        //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
+
+        bindings = <
 &none  &kp Q         &kp W         &kp E          &kp R          &kp T        &kp Y        &kp U          &kp I          &kp O         &kp P            &none
 &none  &mt_l LGUI A  &mt_l LALT S  &mt_l LCTRL D  &mt_l LSHFT F  &kp G        &kp H        &mt_r RSHFT J  &mt_r RCTRL K  &mt_r LALT L  &mt_r RGUI SEMI  &none
 &none  &kp Z         &kp X         &kp C          &kp V          &kp B        &kp N        &kp M          &kp COMMA      &kp DOT       &kp FSLH         &none
                                    &none          &mo 1          &sk LSHFT    &lt 3 SPACE  &mo 2          &none
-            >;
-        };
+        >;
+    };
 
-        num {
-            bindings = <
+    num {
+        bindings = <
 &trans  &trans         &trans         &trans          &trans          &trans    &trans     &trans          &trans          &trans         &trans         &trans
 &trans  &mt_l LGUI N6  &mt_l LALT N4  &mt_l LCTRL N0  &mt_l LSHFT N2  &trans    &trans     &mt_r RSHFT N3  &mt_r RCTRL N1  &mt_r LALT N5  &mt_r RGUI N7  &trans
 &trans  &trans         &trans         &trans          &kp N8          &trans    &trans     &kp N9          &trans          &trans         &trans         &trans
                                       &trans          &trans          &trans    &kp SPACE  &mo 4           &trans
-            >;
-        };
+        >;
+    };
 
-        sym {
-            bindings = <
+    sym {
+        bindings = <
 &trans  &trans           &kp TILDE        &kp CARET          &kp UNDER          &trans          &trans     &kp BSLH        &kp LBRC          &kp RBRC         &trans           &trans
 &trans  &mt_l LGUI PIPE  &mt_l LALT PLUS  &mt_l LCTRL MINUS  &mt_l LSHFT EQUAL  &kp ASTERISK    &kp GRAVE  &mt_r RSHFT AT  &mt_r RCTRL LPAR  &mt_r LALT RPAR  &mt_r RGUI EXCL  &trans
 &trans  &trans           &kp HASH         &kp DOLLAR         &kp PERCENT        &trans          &trans     &kp AMPS        &kp LBKT          &kp RBKT         &trans           &trans
                                           &none              &mo 4              &trans          &kp SPACE  &trans          &none
-            >;
-        };
+        >;
+    };
 
-        nav {
-            bindings = <
+    nav {
+        bindings = <
 &none  &none     &kp LC(RIGHT)  &kp HOME   &none      &none           &kp DOWN      &kp RIGHT         &kp PG_UP       &none             &none     &none
 &none  &kp LGUI  &kp LALT       &kp LCTRL  &kp LSHFT  &kp PG_DN       &kp LEFT      &mt_r RSHFT DOWN  &mt_r RCTRL UP  &mt_r LALT RIGHT  &kp RGUI  &none
 &none  &none     &kp DEL        &kp END    &none      &kp LC(LEFT)    &kp UP_ARROW  &kp LEFT          &none           &none             &none     &none
                                 &none      &none      &trans          &trans        &none             &none
-            >;
-        };
+        >;
+    };
 
-        function {
-            bindings = <
+    function {
+        bindings = <
 &none  &studio_unlock  &bt BT_SEL 4     &bt BT_SEL 0     &bt BT_SEL 2    &none         &none       &bt BT_SEL 3    &bt BT_SEL 1    &bt BT_CLR     &bt BT_CLR_ALL  &none
 &none  &mt_l LGUI F6   &mt_l LALT F4    &mt_l LCTRL F10  &mt_l LSHFT F2  &kp F12       &kp F11     &mt_r RSHFT F3  &mt_r RCTRL F1  &mt_r LALT F5  &mt_r RGUI F7   &none
 &none  &bootloader     &kp PAUSE_BREAK  &kp PRINTSCREEN  &kp F8          &sys_reset    &sys_reset  &kp F9          &kp INSERT      &none          &bootloader     &none
                                         &none            &trans          &trans        &kp SPACE   &trans          &none
-            >;
-        };
+        >;
+    };
 
-        layer_5 {
-            bindings = <
+    layer_5 {
+        bindings = <
 &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
                         &trans  &trans  &trans    &trans  &trans  &trans
-            >;
-        };
+        >;
     };
+};
 
-    conditional_layers { compatible = "zmk,conditional-layers"; };
+conditional_layers { compatible = "zmk,conditional-layers"; };
+
 };
