@@ -17,7 +17,7 @@
 / {
     combos {
         compatible = "zmk,combos";
-    
+
         tab {
             bindings = <&kp TAB>;
             key-positions = <2 3>;
@@ -25,7 +25,7 @@
             layers = <0 1 2 3>;
             slow-release;
         };
-    
+
         backspace {
             bindings = <&kp BSPC>;
             key-positions = <8 9>;
@@ -33,7 +33,7 @@
             layers = <0 1 2>;
             slow-release;
         };
-    
+
         escape {
             bindings = <&kp ESC>;
             key-positions = <26 27>;
@@ -41,7 +41,7 @@
             layers = <0 1 2 3>;
             slow-release;
         };
-    
+
         enter {
             bindings = <&kp ENTER>;
             key-positions = <32 33>;
@@ -49,7 +49,7 @@
             layers = <0 1 2>;
             slow-release;
         };
-    
+
         dash {
             bindings = <&mt LC(LALT) MINUS>;
             key-positions = <15 14>;
@@ -57,7 +57,7 @@
             layers = <0>;
             slow-release;
         };
-    
+
         quote {
             bindings = <&mt RC(LALT) APOS>;
             key-positions = <21 20>;
@@ -66,45 +66,47 @@
             slow-release;
         };
     };
-    
+
     behaviors {
         mt_l: mt_l {
             compatible = "zmk,behavior-hold-tap";
             label = "MT_L";
             bindings = <&kp>, <&kp>;
-    
+
             #binding-cells = <2>;
             tapping-term-ms = <1000>;
             hold-trigger-key-positions = <36 37 38 39 40 41 6 7 8 9 10 11 18 19 20 21 22 23 30 31 32 33 34 35 40 41>;
             hold-trigger-on-release;
             require-prior-idle-ms = <300>;
             quick-tap-ms = <300>;
+            flavor = "balanced";
         };
-    
+
         mt_r: mt_r {
             compatible = "zmk,behavior-hold-tap";
             label = "MT_R";
             bindings = <&kp>, <&kp>;
-    
+
             #binding-cells = <2>;
             tapping-term-ms = <1000>;
             hold-trigger-key-positions = <41 40 39 38 37 36 0 1 2 3 4 5 12 13 14 15 16 17 24 25 26 27 28 29>;
             hold-trigger-on-release;
             require-prior-idle-ms = <300>;
             quick-tap-ms = <300>;
+            flavor = "balanced";
         };
     };
-    
+
     keymap {
         compatible = "zmk,keymap";
-    
+
         base {
             // -----------------------------------------------------------------------------------------
             // |  TAB |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  | BSPC |
             // | CTRL |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  |  '   |
             // | SHFT |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  | ESC  |
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
-    
+
             bindings = <
 &none  &kp Q         &kp W         &kp E          &kp R          &kp T        &kp Y        &kp U          &kp I          &kp O         &kp P            &none
 &none  &mt_l LGUI A  &mt_l LALT S  &mt_l LCTRL D  &mt_l LSHFT F  &kp G        &kp H        &mt_r RSHFT J  &mt_r RCTRL K  &mt_r LALT L  &mt_r RGUI SEMI  &none
@@ -112,7 +114,7 @@
                                    &none          &mo 1          &sk LSHFT    &lt 3 SPACE  &mo 2          &none
             >;
         };
-    
+
         num {
             bindings = <
 &trans  &trans         &trans         &trans          &trans          &trans    &trans     &trans          &trans          &trans         &trans         &trans
@@ -121,7 +123,7 @@
                                       &trans          &trans          &trans    &kp SPACE  &mo 4           &trans
             >;
         };
-    
+
         sym {
             bindings = <
 &trans  &trans           &kp TILDE        &kp CARET          &kp UNDER          &trans          &trans     &kp BSLH        &kp LBRC          &kp RBRC         &trans           &trans
@@ -130,7 +132,7 @@
                                           &none              &mo 4              &trans          &kp SPACE  &trans          &none
             >;
         };
-    
+
         nav {
             bindings = <
 &none  &none     &kp LC(RIGHT)  &kp HOME   &none      &none           &kp DOWN      &kp RIGHT         &kp PG_UP       &none             &none     &none
@@ -139,7 +141,7 @@
                                 &none      &none      &trans          &trans        &none             &none
             >;
         };
-    
+
         function {
             bindings = <
 &none  &studio_unlock  &bt BT_SEL 4     &bt BT_SEL 0     &bt BT_SEL 2    &none         &none       &bt BT_SEL 3    &bt BT_SEL 1    &bt BT_CLR     &bt BT_CLR_ALL  &none
@@ -148,7 +150,7 @@
                                         &none            &trans          &trans        &kp SPACE   &trans          &none
             >;
         };
-    
+
         layer_5 {
             bindings = <
 &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
@@ -158,6 +160,6 @@
             >;
         };
     };
-    
+
     conditional_layers { compatible = "zmk,conditional-layers"; };
 };
