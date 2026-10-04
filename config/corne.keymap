@@ -10,8 +10,14 @@
 
 &sk {
     quick-release;
-    release-after-ms = <150>;
+    release-after-ms = <100>;
     lazy;
+};
+
+&lt {
+    flavor = "balanced";
+    quick-tap-ms = <100>;
+    tapping-term-ms = <100>;
 };
 
 / {
@@ -58,11 +64,11 @@
             bindings = <&kp>, <&kp>;
 
             #binding-cells = <2>;
-            tapping-term-ms = <2000>;
+            tapping-term-ms = <100>;
             hold-trigger-key-positions = <36 37 38 39 40 41 6 7 8 9 10 11 18 19 20 21 22 23 30 31 32 33 34 35 40 41>;
             hold-trigger-on-release;
-            require-prior-idle-ms = <300>;
-            quick-tap-ms = <300>;
+            require-prior-idle-ms = <100>;
+            quick-tap-ms = <100>;
             flavor = "balanced";
         };
 
@@ -72,11 +78,11 @@
             bindings = <&kp>, <&kp>;
 
             #binding-cells = <2>;
-            tapping-term-ms = <2000>;
+            tapping-term-ms = <100>;
             hold-trigger-key-positions = <41 40 39 38 37 36 0 1 2 3 4 5 12 13 14 15 16 17 24 25 26 27 28 29>;
             hold-trigger-on-release;
-            require-prior-idle-ms = <300>;
-            quick-tap-ms = <300>;
+            require-prior-idle-ms = <100>;
+            quick-tap-ms = <100>;
             flavor = "balanced";
         };
     };
@@ -119,10 +125,10 @@
 
         nav {
             bindings = <
-&none  &none     &kp LC(RIGHT)  &kp HOME   &none      &none           &kp DOWN      &kp RIGHT         &kp PG_UP       &none             &none     &none
-&none  &kp LGUI  &kp LALT       &kp LCTRL  &kp LSHFT  &kp PG_DN       &kp LEFT      &mt_r RSHFT DOWN  &mt_r RCTRL UP  &mt_r LALT RIGHT  &kp RGUI  &none
-&none  &none     &kp DEL        &kp END    &none      &kp LC(LEFT)    &kp UP_ARROW  &kp LEFT          &none           &none             &none     &none
-                                &none      &none      &trans          &trans        &none             &none
+&none  &none     &kp LC(RIGHT)  &kp HOME   &none      &none           &kp DOWN      &kp RIGHT  &kp PG_UP  &none     &none     &none
+&none  &kp LGUI  &kp LALT       &kp LCTRL  &kp LSHFT  &kp PG_DN       &none         &kp RSHFT  &kp RCTRL  &kp LALT  &kp RGUI  &none
+&none  &none     &kp DEL        &kp END    &none      &kp LC(LEFT)    &kp UP_ARROW  &kp LEFT   &none      &none     &none     &none
+                                &none      &none      &trans          &trans        &none      &none
             >;
         };
 
