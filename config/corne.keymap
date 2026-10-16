@@ -56,6 +56,14 @@
             layers = <0 1 2>;
             slow-release;
         };
+
+        function {
+            bindings = <&mo 4>;
+            key-positions = <37 40>;
+            timeout-ms = <50>;
+            slow-release;
+            layers = <0>;
+        };
     };
 
     behaviors {
@@ -111,7 +119,7 @@
 &trans  &trans         &trans         &trans          &trans          &trans    &trans     &trans          &trans          &trans         &trans         &trans
 &trans  &mt_l LGUI N6  &mt_l LALT N4  &mt_l LCTRL N0  &mt_l LSHFT N2  &trans    &trans     &mt_r RSHFT N3  &mt_r RCTRL N1  &mt_r LALT N5  &mt_r RGUI N7  &trans
 &trans  &trans         &trans         &trans          &kp N8          &trans    &trans     &kp N9          &trans          &trans         &trans         &trans
-                                      &trans          &trans          &trans    &kp SPACE  &mo 4           &trans
+                                      &trans          &trans          &trans    &kp SPACE  &trans          &trans
             >;
         };
 
@@ -120,7 +128,7 @@
 &trans  &trans           &kp TILDE        &kp CARET          &kp EXCL           &trans          &trans     &kp BSLH        &kp LBRC          &kp RBRC         &trans                   &trans
 &trans  &mt_l LGUI PIPE  &mt_l LALT PLUS  &mt_l LCTRL MINUS  &mt_l LSHFT EQUAL  &kp ASTERISK    &kp GRAVE  &mt_r RSHFT AT  &mt_r RCTRL LPAR  &mt_r LALT RPAR  &mt_r RGUI SINGLE_QUOTE  &trans
 &trans  &trans           &kp HASH         &kp DOLLAR         &kp PERCENT        &trans          &trans     &kp AMPS        &kp LBKT          &kp RBKT         &trans                   &trans
-                                          &trans             &mo 4              &trans          &kp SPACE  &trans          &trans
+                                          &trans             &trans             &trans          &kp SPACE  &trans          &trans
             >;
         };
 
@@ -129,7 +137,7 @@
 &none  &none     &kp LC(RIGHT)  &kp HOME   &none      &none           &kp DOWN      &kp RIGHT  &kp PG_UP  &none     &none     &none
 &none  &kp LGUI  &kp LALT       &kp LCTRL  &kp LSHFT  &kp PG_DN       &kp LEFT      &kp RSHFT  &kp RCTRL  &kp LALT  &kp RGUI  &none
 &none  &none     &kp DEL        &kp END    &none      &kp LC(LEFT)    &kp UP_ARROW  &none      &none      &none     &none     &none
-                                &none      &none      &trans          &trans        &none      &none
+                                &none      &none      &trans          &kp SPACE     &none      &none
             >;
         };
 
