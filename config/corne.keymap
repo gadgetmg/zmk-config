@@ -64,6 +64,14 @@
             slow-release;
             layers = <0>;
         };
+
+        function-alt {
+            bindings = <&mo 4>;
+            key-positions = <36 41>;
+            timeout-ms = <50>;
+            slow-release;
+            layers = <0>;
+        };
     };
 
     behaviors {
@@ -107,10 +115,10 @@
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
             bindings = <
-&none  &kp Q         &kp W         &kp E          &kp R          &kp T        &kp Y        &kp U          &kp I          &kp O         &kp P            &none
-&none  &mt_l LGUI A  &mt_l LALT S  &mt_l LCTRL D  &mt_l LSHFT F  &kp G        &kp H        &mt_r RSHFT J  &mt_r RCTRL K  &mt_r LALT L  &mt_r RGUI SEMI  &none
-&none  &kp Z         &kp X         &kp C          &kp V          &kp B        &kp N        &kp M          &kp COMMA      &kp DOT       &kp FSLH         &none
-                                   &none          &mo 1          &sk LSHFT    &lt 3 SPACE  &mo 2          &none
+&none  &kp Q         &kp W         &kp E          &kp R          &kp T        &kp Y        &kp U               &kp I          &kp O         &kp P            &none
+&none  &mt_l LGUI A  &mt_l LALT S  &mt_l LCTRL D  &mt_l LSHFT F  &kp G        &kp H        &mt_r RSHFT J       &mt_r RCTRL K  &mt_r LALT L  &mt_r RGUI SEMI  &none
+&none  &kp Z         &kp X         &kp C          &kp V          &kp B        &kp N        &kp M               &kp COMMA      &kp DOT       &kp FSLH         &none
+                                   &mo 1          &lt 1 MINUS    &sk LSHFT    &lt 3 SPACE  &lt 2 SINGLE_QUOTE  &mo 2
             >;
         };
 
@@ -146,7 +154,7 @@
 &none  &studio_unlock  &bt BT_SEL 4     &bt BT_SEL 0     &bt BT_SEL 2    &none         &none       &bt BT_SEL 3    &bt BT_SEL 1    &bt BT_CLR     &bt BT_CLR_ALL  &none
 &none  &mt_l LGUI F6   &mt_l LALT F4    &mt_l LCTRL F10  &mt_l LSHFT F2  &kp F12       &kp F11     &mt_r RSHFT F3  &mt_r RCTRL F1  &mt_r LALT F5  &mt_r RGUI F7   &none
 &none  &bootloader     &kp PAUSE_BREAK  &kp PRINTSCREEN  &kp F8          &sys_reset    &sys_reset  &kp F9          &kp INSERT      &none          &bootloader     &none
-                                        &none            &trans          &trans        &kp SPACE   &trans          &none
+                                        &none            &none           &trans        &kp SPACE   &none           &none
             >;
         };
     };
